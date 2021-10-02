@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="contact.jsp">Contact</a>
+<a href="addProduct.jsp">Add Product</a>
+<a href="displayProduct.jsp">Display Product</a>
+<a href="login.jsp">Login</a>
+<a href="register.jsp">Register</a>
+<a href="product.jsp">Product</a>
+<a href="LogOutServlet">Logout</a>
+<a href="UserAccountDisplay.jsp">User Account</a>
+<a href="privacy.jsp">Privacy</a>
 
 </body>
 </html>

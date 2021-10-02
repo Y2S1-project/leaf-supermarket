@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+#ct_h1{
+	font-weight:500;
+	font-size: 500%;
+	color:#228B22;
+}
+
+.p_t{
+	color:black;
+	margin-left:100px;
+	margin-right:100px;
+}
+
+.thath_h1{
+	text-decoration:underline;
+	text-underline-position:under;
+	color:#3CB371;
+	font-weight:500;
+	font-size:25px;
+}
+
+.p_t p{
+	font-weight:500;
+	font-size:20px;
+}
+
+.p_t li{
+	font-weight:500;
+	font-size:20px;
+}

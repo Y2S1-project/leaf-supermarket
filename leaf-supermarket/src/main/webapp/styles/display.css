@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+tr{
+	transition:all .2s ease-in;
+	cursor:pointer;
+		
+}
+th{
+	border-bottom:1px solid #ddd;
+	background-color:#004600;
+	color:white;
+	height:60px;
+	
+}
+tr:hover{
+	background-color:#f5f5f5;
+	transform:scale(1.02);
+	box-shadow:2px 2px 12px rgba(0,0,0,0.2),-1px -1px 8px rgba(0,0,0,0.2);
+}
+table{
+	box-shadow:2px 2px 12px rgba(0,0,0,0.2),-1px -1px 8px rgba(0,0,0,0.2);
+	
+}
+.link{
+	color:#4C7D4C;
+	font-weight:5px;
+	font-weight:650;
+}
+.link:hover{
+	color:#6eaea1;
+}
+.Ptitle{
+		font-size:40px;
+		margin-bottom:15px;
+		color:#004600;
+		font-weight:500;
+		font-style:italic;
+		text-decoration:underline;
+}
