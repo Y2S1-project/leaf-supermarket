@@ -5,31 +5,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import connection.DbCon;
 import dao.*;
 import model.*;
-
 
 @WebServlet("/EditProductServlet")
 public class EditProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-   
     public EditProductServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-response.setContentType("text/html;charser=UTF-8");
+		response.setContentType("text/html;charser=UTF-8");
 		
 		try {
 			int id = Integer.parseInt(request.getParameter("id"));
@@ -57,10 +50,8 @@ response.setContentType("text/html;charser=UTF-8");
 			}else {
 				p.DisplayFailedMessage();
 			}
-			
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
 	}
-
 }

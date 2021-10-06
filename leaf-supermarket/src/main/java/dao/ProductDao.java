@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import model.*;
 import java.sql.Connection;
 
-
 public class ProductDao {
 	Connection con ;
 	
@@ -17,7 +16,6 @@ public class ProductDao {
 	public boolean saveProduct(Product product){
         boolean set = false;
         try{
-         
            String query = "insert into product(product_name,quantity,unit_price,increment_unit,discount_rate,category) values(?,?,?,?,?,?)";
            
            PreparedStatement pt = this.con.prepareStatement(query);
@@ -27,14 +25,15 @@ public class ProductDao {
            pt.setDouble(4, product.getIncrementUnit());
            pt.setDouble(5, product.getDiscount());
            pt.setString(6, product.getCategory());
-         
            pt.executeUpdate();
            set = true;
+           
         }catch(Exception e){
             e.printStackTrace();
         }
         return set;
     }
+	
 	public List<Product> getAllProducts(){
 		List<Product> products = new ArrayList<Product>();
 		try {
@@ -51,7 +50,6 @@ public class ProductDao {
 				row.setDiscount(rs.getDouble("discount_rate"));
 				row.setCategory(rs.getString("category"));
 				products.add(row);
-				
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -62,28 +60,25 @@ public class ProductDao {
 	public Product getSingleProduct(int id) {
 		Product p  = null;
 		try {
-		String query = "select * from product where product_id=?";
-		PreparedStatement pt = this.con.prepareStatement(query);
-		pt=this.con.prepareStatement(query);
-		pt.setInt(1, id);
-		ResultSet rs=pt.executeQuery();
-		while(rs.next()) {
-			int pid = rs.getInt("product_id");
-			String name = rs.getString("product_name");
-			double quantity = rs.getDouble("quantity");
-			double unitPrice = rs.getDouble("unit_price");
-			double incrementUnit = rs.getDouble("increment_unit");
-			double discount = rs.getDouble("discount_rate");
-			String category = rs.getString("category");
-			
-			p = new Product(pid,name,quantity,unitPrice,incrementUnit,discount,category);
-			
-		}
+			String query = "select * from product where product_id=?";
+			PreparedStatement pt = this.con.prepareStatement(query);
+			pt=this.con.prepareStatement(query);
+			pt.setInt(1, id);
+			ResultSet rs=pt.executeQuery();
+			while(rs.next()) {
+				int pid = rs.getInt("product_id");
+				String name = rs.getString("product_name");
+				double quantity = rs.getDouble("quantity");
+				double unitPrice = rs.getDouble("unit_price");
+				double incrementUnit = rs.getDouble("increment_unit");
+				double discount = rs.getDouble("discount_rate");
+				String category = rs.getString("category");
+				p = new Product(pid,name,quantity,unitPrice,incrementUnit,discount,category);
+			}
 		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
 		return p;
 	}
 	
@@ -102,6 +97,7 @@ public class ProductDao {
 			pt.setInt(7,p.getId());
 			pt.executeUpdate();
 			test = true;
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

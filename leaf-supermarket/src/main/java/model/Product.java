@@ -1,20 +1,18 @@
 package model;
 
 public class Product implements Message{
-	int id;
-	String name;
-	double quantity;
-	double unitPrice;
-	double incrementUnit;
-	double discount;
-	String category;
+	private int id;
+	private String name;
+	private double quantity;
+	private double unitPrice;
+	private double incrementUnit;
+	private double discount;
+	private String category;
 	
 	public Product() {
 		
 	}
-	
-	public Product(int id, String name, double quantity, double unitPrice, double incrementUnit, double discount,
-			String category) {
+	public Product(int id, String name, double quantity, double unitPrice, double incrementUnit, double discount, String category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -24,9 +22,7 @@ public class Product implements Message{
 		this.discount = discount;
 		this.category = category;
 	}
-
-	public Product(String name, double quantity, double unitPrice, double incrementUnit, double discount,
-			String category) {
+	public Product(String name, double quantity, double unitPrice, double incrementUnit, double discount, String category) {
 		super();
 		this.name = name;
 		this.quantity = quantity;

@@ -1,6 +1,5 @@
 <% if ( session.getAttribute("auth1")!= null){%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@page import="model.*"%>
 <%@page import="dao.*"%>
 <%@page import="connection.*"%>
@@ -13,37 +12,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Edit Product</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<style>
-			.inside{
+	<title>Edit Product</title>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<style>
+		.inside{
 				background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/editproduct.jpg);
 				background-size:cover;
-			}
-            .inner{
+		}
+        .inner{
                 position: relative;
                 margin: 0 auto;
                 width: 500px;
                 display: block;
                 padding: 50px 0;
                 color:white;
-            }
-            h3{
+        }
+        h3{
                 text-align: center;
                 margin-bottom: 20px;
                 color:white;
-            }
-        </style>
+        }
+   </style>
 </head>
 <body>
-<div class="inside">
-<div class="inner">
+	<div class="inside">
+		<div class="inner">
             <div class=" container">
                 <div class="row">
                     <div class="col-12">
                         <h3>-Edit Product Details-</h3>
-					<form action="EditProductServlet" method="post">
+						<form action="EditProductServlet" method="post">
 							<div class="form-group">
                                 <label>Product ID</label>
                                 <input class="form-control" name="id" value="${edit_products.id }" required>
@@ -75,11 +74,11 @@
   
 							<button type="submit" class="btn btn-success">Submit</button>
                       </form>
-</div>
-</div>
-</div>
-</div>
-</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
 <% }else{
