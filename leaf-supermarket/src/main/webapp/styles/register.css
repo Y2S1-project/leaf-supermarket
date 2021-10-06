@@ -8,7 +8,6 @@ body{
 	background-size:cover;
 	background-attachment:fixed;
 	font-family:new time roman;
-	
 }
 h1{
 	font-size:40px;
@@ -20,30 +19,16 @@ p{
 	color:white;
 }
 h3{
-	
 	font-size:25px;
 	color:white;
 }	
 .col-md-7{
-	margin-top:-80px;
-	
-	
-	
-}
-
-.glyphicon-pencil{
-	font-size:35px;	
-	color:white;
-	float:right;
-	margin-top:20px;
-	
+	margin-top:-80px;	
 }
 .col-md-5{
 	margin-top:80px;
 	box-shadow:-1px 1px 60px 10px black;
-	background:rgba(0,0,0,0.4);
-	
-	
+	background:rgba(0,0,0,0.4);	
 }
 .label{
 	font-weight:normal;
@@ -67,5 +52,4 @@ h3{
 	width:120px;
 	margin-left:80px;
 	margin-bottom:20px;
-
 }

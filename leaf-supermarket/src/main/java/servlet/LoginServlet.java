@@ -8,11 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.PrintWriter;
 import java.sql.SQLException;
-
-
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -21,7 +18,6 @@ public class LoginServlet extends HttpServlet {
     
     public LoginServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	
@@ -36,8 +32,6 @@ public class LoginServlet extends HttpServlet {
 			String email=request.getParameter("email");
 			String password=request.getParameter("password");
 			
-			
-			
 			try {
 				UserDao udao =new UserDao(DbCon.getConnection());
 				User user = udao.userLogin(email, password);
@@ -46,17 +40,13 @@ public class LoginServlet extends HttpServlet {
 				if(user!=null) {
 					user.DisplaySuccessMessage();
 					request.getSession().setAttribute("auth",user.getId());
-					response.sendRedirect("product.jsp");
-					
-				
+					response.sendRedirect("index.jsp");
 				}
 				else if(user1!=null) {
 					user1.DisplaySuccessMessage();
 					request.getSession().setAttribute("auth",user1.getId());
 					request.getSession().setAttribute("auth1",user1.getId());
 					response.sendRedirect("index.jsp");
-					
-				
 				}
 				
 				else{
@@ -65,12 +55,7 @@ public class LoginServlet extends HttpServlet {
 				
 			}catch(ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
-			}
-			
-			
-			
-		}
-				
+			}	
+		}		
 	}
-
 }
