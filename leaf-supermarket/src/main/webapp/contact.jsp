@@ -10,7 +10,7 @@
 	<link rel = "stylesheet" href="styles/contact.css">
 </head>
 <body>
-<div class="contact">
+	<div class="contact">
 	<section class="contact-area">
 		<div class="container">
 			<div class="row">
@@ -58,6 +58,4 @@
 	</section><br><br>
 	</div>
 </body>
-
- 
 </html>

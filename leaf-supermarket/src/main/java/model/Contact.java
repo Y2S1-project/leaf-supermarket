@@ -1,11 +1,11 @@
 package model;
 
 public class Contact implements Message{
-		String type;
-		String name;
-		String email;
-		int telepehone;
-		String message;
+		private String type;
+		private String name;
+		private String email;
+		private int telepehone;
+		private String message;
 		
 		public Contact(String type, String name, String email, int telepehone, String message) {
 			super();
@@ -51,5 +51,4 @@ public class Contact implements Message{
 		public void DisplayFailedMessage() {
 			System.out.println("Failed for the contact us form");
 		}
-
 }

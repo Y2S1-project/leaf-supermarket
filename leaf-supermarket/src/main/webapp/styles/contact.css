@@ -5,63 +5,54 @@
 	background-size: cover;
 	background-position:center;
 }
-
-
 .contact-title h2{
-		font-size:40px;
-		margin-bottom:15px;
-		display:block;
-		color:white;
-		border-color:white;
-		font-weight:500;
+	font-size:40px;
+	margin-bottom:15px;
+	display:block;
+	color:white;
+	border-color:white;
+	font-weight:500;
 }
-
 .contact-form input{
-		width:100%;
-		padding : 20px;
-		margin-bottom:25px;
-		border:0;
-		outline:none;
-		border-radius:5px;
-		background:rgba(136,133,133,0.5);
-		
+	width:100%;
+	padding : 20px;
+	margin-bottom:25px;
+	border:0;
+	outline:none;
+	border-radius:5px;
+	background:rgba(136,133,133,0.5);
 }
 .contact-form select{
-		width:100%;
-		padding : 20px;
-		margin-bottom:25px;
-		border:0;
-		outline:none;
-		border-radius:5px;
-		background:rgba(136,133,133,0.5);
-		font-weight:500;
-		
+	width:100%;
+	padding : 20px;
+	margin-bottom:25px;
+	border:0;
+	outline:none;
+	border-radius:5px;
+	background:rgba(136,133,133,0.5);
+	font-weight:500;		
 }
-
 .contact-form textarea{
-		width:100%;
-		height:200px;
-		padding : 20px;
-		margin-bottom:20px;
-		border-radius:20px;
-		background:rgba(136,133,133,0.5);
-		outline:none;
-		
+	width:100%;
+	height:200px;
+	padding : 20px;
+	margin-bottom:20px;
+	border-radius:20px;
+	background:rgba(136,133,133,0.5);
+	outline:none;		
 }
 .contact-btn button{
-		border:0;
-		padding:15px 35px;
-		font-size:22px;
-		border-radius:5px;
-		background:#013220;
-		color:#fff;
-		transition :.3s ease-in-out;
+	border:0;
+	padding:15px 35px;
+	font-size:22px;
+	border-radius:5px;
+	background:#013220;
+	color:#fff;
+	transition :.3s ease-in-out;
 }
-
 .contact-btn button:hover{
-		background:#10412f;
+	background:#10412f;
 }
-
 ::placeholder{
 	color:black;
 	font-weight:500;
