@@ -1,11 +1,5 @@
 @charset "ISO-8859-1";
-*
-{
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
-	font-family:'Poppins',sans-serif;
-}
+
 .contact{
 	background-image:url(../images/contact.jpg);
 	background-size: cover;
