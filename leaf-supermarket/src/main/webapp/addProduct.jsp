@@ -23,14 +23,52 @@
          	text-align: center;
          	margin-bottom: 20px;
          	color:white;
-         	font-style:italic;
-         	text-decoration:underline;
-         	font-weight:600;
+         	font-weight:700;
 		 	font-size:2em;
       	}
       	.form-group{
          	color:white;
-      	}	
+      	}
+      	.form-group input{
+         	width:100%;
+			padding : 10px 20px;
+			outline :none;
+			font-weight:400;
+			border:2px solid #607d8b;
+			font-size:16px;
+			letter-spacing:1px;
+			color:#607d8b;
+			background:transparent;
+			border-radius:30px;	
+      	}
+      	.form-group select{
+         	width:100%;
+			padding : 10px 20px;
+			outline :none;
+			font-weight:400;
+			border:2px solid #607d8b;
+			font-size:16px;
+			letter-spacing:1px;
+			color:#607d8b;
+			background:transparent;
+			border-radius:30px;	
+			height:47px;
+      	}
+      	.mybtn{
+      		width:100%;
+			padding : 10px 20px;
+			outline :none;
+			font-weight:400;
+			border:2px solid #607d8b;
+      		background:#013220;
+			color:#fff;
+			outline:none;
+			border:none;
+			font-weight:500;
+			cursor:pointer;
+			border-radius:30px;	
+			font-size:20px;
+      	}
       	@media(max-width:765px){
 			.inside{
 				width:100%;
@@ -45,7 +83,7 @@
             <div class=" container">
                 <div class="row">
                     <div class="col-12">
-       					<h3>-Add New Product-</h3>
+       					<h3>Add New Product</h3>
 						<form action="AddProductServlet" method="post">
               				<div class="form-group">
                    				<label>Product Name</label>
@@ -84,8 +122,8 @@
         							<option value="Household">Household</option>
       							</select>
               				</div>
-			  				<button type="submit" class="btn btn-success">Submit</button>
-        				</form>
+			  				<input type="submit" value="Submit" class="mybtn">
+        				</form><br>
 					</div>
 				</div>
 			</div>
