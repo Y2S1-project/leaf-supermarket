@@ -16,6 +16,7 @@
 <a href="LogOutServlet">Logout</a>
 <a href="UserAccountDisplay.jsp">User Account</a>
 <a href="privacy.jsp">Privacy</a>
+<h1>Hello</h1>
 
 </body>
 </html>
