@@ -16,9 +16,10 @@
 	<meta charset="ISO-8859-1">
 </head>
 <body>
-	<div class="col-md-12">
-         <center><h3 class="Ptitle">-Product Information-</h3></center><br>
-         	<table class="table">
+	<div class="inside">
+		<div class="col-md-12">
+         	<center><h3 class="Ptitle">-Product Information-</h3></center><br>
+         		<table class="table">
                     <thead class="bg-light">
 						 <tr>
                             <th scope="col">Product Name</th>
@@ -46,7 +47,8 @@
                         <%}
                     }%>
                   </tbody>
-          </table>
+          	</table>
+		</div>
 	</div>
 </body>
 </html>
