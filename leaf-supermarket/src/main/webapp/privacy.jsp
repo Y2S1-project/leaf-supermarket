@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Privacy & Policy</title>
-<link rel="stylesheet" href="styles/privacy.css">
+	<title>Privacy & Policy</title>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="styles/privacy.css">
 </head>
 <body>
 	  <center><h1 id="ct_h1">Privacy Policy & Terms of Usage</h1></center>     
@@ -78,9 +77,8 @@
 					
 				<h2 class="thath_h1">Contact Us</h2>
 				<p>Feel free to contact us</p>
-				<li>Via Email: leaf@gmail.com</li>
+				<li>Via Email: leaf.super0@gmail.com</li>
 				
-			</div>
-			
+			</div>	
 </body>
 </html>
