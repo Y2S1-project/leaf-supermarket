@@ -3,10 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Leaf Online</title>
+<%@include file="includes/head.jsp" %>
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
+<<<<<<< Updated upstream
 
+=======
+<header>
+	<%@include file="includes/navbar.jsp" %>
+</header>
+ 
+<footer>
+<%@include file="includes/footer.jsp" %>
+</footer>
+>>>>>>> Stashed changes
 </body>
 </html>
