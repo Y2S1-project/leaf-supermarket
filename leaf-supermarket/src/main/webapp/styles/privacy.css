@@ -1,14 +1,17 @@
 @charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 #ct_h1{
-	font-weight:500;
-	font-size: 500%;
+	font-weight:600;
+	font-size: 400%;
 	color:#228B22;
+	font-family: 'Poppins', sans-serif;
 }
 
 .p_t{
 	color:black;
 	margin-left:100px;
 	margin-right:100px;
+	font-family: 'Poppins', sans-serif;
 }
 
 .thath_h1{

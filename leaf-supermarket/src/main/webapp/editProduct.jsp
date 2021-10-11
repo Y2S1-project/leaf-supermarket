@@ -17,31 +17,70 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<style>
 		.inside{
-				background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/editproduct.jpg);
-				background-size:cover;
+			background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/editProduct.png);
+			background-size:cover;
 		}
         .inner{
-                position: relative;
-                margin: 0 auto;
-                width: 500px;
-                display: block;
-                padding: 50px 0;
-                color:white;
-        }
-        h3{
-                text-align: center;
-                margin-bottom: 20px;
-                color:white;
-        }
+        	margin: 0 auto;
+         	width: 500px;
+         	display: block;
+         	padding: 50px 0;
+         	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+     	}
+     	.inside h3{
+         	text-align: center;
+         	margin-bottom: 20px;
+         	color:white;
+         	font-weight:700;
+		 	font-size:2em;
+      	}
+      	.inside .form-group{
+         	color:white;
+         	font-weight:600;
+      	}
+      	.inside .form-group input{
+         	width:100%;
+			padding : 10px 20px;
+			outline :none;
+			font-weight:400;
+			border:2px solid #607d8b;
+			font-size:16px;
+			letter-spacing:1px;
+			color:#607d8b;
+			background:transparent;
+			border-radius:30px;	
+			color:white;
+      	}
+      	.mybtn{
+      		width:100%;
+			padding : 10px 20px;
+			outline :none;
+			font-weight:400;
+			border:2px solid #607d8b;
+      		background:#013220;
+			color:#fff;
+			outline:none;
+			border:none;
+			font-weight:500;
+			cursor:pointer;
+			border-radius:30px;	
+			font-size:20px;
+      	}
+      	@media(max-width:765px){
+			.inside{
+				width:100%;
+				height:100%;
+			}	
+		}
    </style>
 </head>
 <body>
-	<div class="inside">
+	<div class="inside"><br>
 		<div class="inner">
             <div class=" container">
                 <div class="row">
                     <div class="col-12">
-                        <h3>-Edit Product Details-</h3>
+                        <h3>Edit Product Details</h3>
 						<form action="EditProductServlet" method="post">
 							<div class="form-group">
                                 <label>Product ID</label>
@@ -71,13 +110,12 @@
                                 <label>Category</label>
                                 <input class="form-control" name="category" value="${edit_products.category }" required>
                             </div>
-  
-							<button type="submit" class="btn btn-success">Submit</button>
+  							<input type="submit" value="Submit" class="mybtn">
                       </form>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div><br>
 	</div>
 </body>
 </html>

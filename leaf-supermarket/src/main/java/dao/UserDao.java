@@ -45,7 +45,7 @@ public class UserDao {
 				user=new User ();
 				user.setId(rs.getInt("user_id"));
 				user.setName(rs.getString("user_name"));
-				user.setEmail(rs.getString("email"));	
+				user.setEmail(rs.getString("email"));
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -74,5 +74,5 @@ public class UserDao {
 		}
 		return user;
 	}
-		
 }
+		

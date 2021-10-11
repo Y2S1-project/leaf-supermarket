@@ -40,12 +40,14 @@ public class LoginServlet extends HttpServlet {
 				if(user!=null) {
 					user.DisplaySuccessMessage();
 					request.getSession().setAttribute("auth",user.getId());
+					request.getSession().setAttribute("username", user.getName());
 					response.sendRedirect("index.jsp");
 				}
 				else if(user1!=null) {
 					user1.DisplaySuccessMessage();
 					request.getSession().setAttribute("auth",user1.getId());
 					request.getSession().setAttribute("auth1",user1.getId());
+					request.getSession().setAttribute("adminname", user1.getName());
 					response.sendRedirect("index.jsp");
 				}
 				

@@ -1,6 +1,6 @@
 
 <%
-if (session.getAttribute("auth1") != null || session.getAttribute("auth") != null) {
+if (session.getAttribute("auth1") == null) {
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -11,7 +11,12 @@ if (session.getAttribute("auth1") != null || session.getAttribute("auth") != nul
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Welcome user</h1>
+	<%if(session.getAttribute("auth") != null){ %>
+		<h1>Welcome user</h1>
+	<%}
+	else{%>
+		<h1>Welcome Guest</h1> 
+	<%}%>
 </body>
 </html>
 <%

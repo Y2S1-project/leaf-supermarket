@@ -19,17 +19,17 @@
          	padding: 50px 0;
          	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
      	}
-     	h3{
+     	.inside h3{
          	text-align: center;
          	margin-bottom: 20px;
          	color:white;
          	font-weight:700;
 		 	font-size:2em;
       	}
-      	.form-group{
+      	.inside .form-group{
          	color:white;
       	}
-      	.form-group input{
+      	.inside .form-group input{
          	width:100%;
 			padding : 10px 20px;
 			outline :none;
@@ -41,7 +41,7 @@
 			background:transparent;
 			border-radius:30px;	
       	}
-      	.form-group select{
+      	.inside .form-group select{
          	width:100%;
 			padding : 10px 20px;
 			outline :none;
@@ -72,7 +72,7 @@
       	@media(max-width:765px){
 			.inside{
 				width:100%;
-			height:100%;
+				height:100%;
 			}	
 		}
 	</style>
