@@ -88,7 +88,7 @@ if(session.getAttribute("auth") != null){
 </div>
   
   <script>
-  const element = document.queryselector(".cart")
+  const element = document.querySelector(".cart")
   function active(){
 	  element.classList.toggle('active')
   }
