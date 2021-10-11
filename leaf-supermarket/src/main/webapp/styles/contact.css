@@ -4,6 +4,7 @@
 	background-image:url(../images/contact.jpg);
 	background-size: cover;
 	background-position:center;
+	filter: brightness(50%);
 }
 .contact-title h2{
 	font-size:40px;

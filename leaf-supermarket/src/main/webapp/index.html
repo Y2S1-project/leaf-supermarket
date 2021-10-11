@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="styles/navbar.css" />
+		<link rel="icon" href="images/icon.png" />
+		<link rel="stylesheet" href="styles/footer.css" />
+		<title>Leaf Online</title>
+	</head>
+	<body>
+		<div class="header-1">
+			<span>
+				<img class="log" src="images/user.svg" />
+				Welcome,&nbsp
+				<a class="profile" href="UserAccountDisplay.jsp"> Chris </a>
+				&nbsp|
+			</span>
+			<span class="log-right">
+				<img class="log" src="images/logout.svg" />
+				&nbsp
+				<a class="logout" href="LogOutServlet"> Logout </a>
+			</span>
+			<span class="log-right">
+				<img class="log" src="images/login.svg" />
+				&nbsp
+				<a class="logout" href="login.jsp"> Login </a>
+			</span>
+		</div>
+
+		<div class="header-2">
+			<a href="index.jsp">
+				<img class="logo" src="images/Leaf.png" alt="leaf logo" />
+			</a>
+			<a href="#">
+				<img
+					class="cart"
+					src="images/cart.svg"
+					alt="shopping cart"
+					onmouseover="active()"
+					onmouseout="inactive()"
+				/>
+			</a>
+		</div>
+
+		<!-- <div class="header-3">
+      
+         <div id="menu-bar" class="fas fa-bars"></div>
+         <nav class="navbar">
+            <a href="#home">home</a> <a href="#category">category</a> <a
+               href="#product">product</a> <a href="#deal">deal</a> <a
+               href="#contact">contact</a>
+         </nav>
+      
+         <form action="" class="search-box-container">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+         </form>
+      </div>
+       -->
+
+		<!-- 
+       
+       <% if ( session.getAttribute("auth1")!= null){%>
+      <a href="addProduct.jsp">Add Product</a>
+      <a href="displayProduct.jsp">Display Product</a>
+      <%} %>
+      <%if(session.getAttribute("auth") == null){%>
+      <a href="login.jsp">Login</a>
+      <a href="register.jsp">Register</a>
+      <%} %>
+      <%if(session.getAttribute("auth1") == null){ %>
+      <a href="product.jsp">Product</a>
+      <%} %>
+      <%if(session.getAttribute("auth") != null){ %>
+      <a href="LogOutServlet">Logout</a>
+      <%} %>
+      <%if(session.getAttribute("auth") != null && session.getAttribute("auth1") == null){ %>
+      <a href="contact.jsp">Contact</a>
+      <a href="UserAccountDisplay.jsp">User Account</a>
+      <%} %>
+      <a href="privacy.jsp">Privacy</a>
+       
+       
+        -->
+
+		<script>
+			const element = document.queryselector(".cart");
+			function active() {
+				element.classList.toggle("active");
+			}
+			function inactive() {
+				element.classList.remove("active");
+			}
+		</script>
+	</body>
+</html>
