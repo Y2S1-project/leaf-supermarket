@@ -82,6 +82,56 @@ public class ProductDao {
 		return p;
 	}
 	
+	public List<Product> getCategoryProducts(int id){
+		List<Product> products = new ArrayList<Product>();
+		String query = null;
+		try {
+			if(id == 1) {
+				query="select * from product where category = 'Vegetable'";
+			}
+			if(id == 2) {
+				query="select * from product where category = 'Fruit'";
+			}
+			if(id == 3) {
+				query="select * from product where category = 'Bakery'";
+			}
+			if(id == 4) {
+				query="select * from product where category = 'Frozen Food'";
+			}
+			if(id == 5) {
+				query="select * from product where category = 'Beverages'";
+			}
+			if(id == 6) {
+				query="select * from product where category = 'Dairy'";
+			}
+			if(id == 7) {
+				query="select * from product where category = 'Pharmacy'";
+			}
+			if(id == 8) {
+				query="select * from product where category = 'Baby Products'";
+			}
+			if(id == 9) {
+				query="select * from product where category = 'Food Cupboard'";
+			}
+			PreparedStatement pt = this.con.prepareStatement(query);
+			ResultSet rs=pt.executeQuery();
+			while(rs.next()) {
+				Product row = new Product();
+				row.setId(rs.getInt("product_id"));
+				row.setName(rs.getString("product_name"));
+				row.setQuantity(rs.getDouble("quantity"));
+				row.setUnitPrice(rs.getDouble("unit_price"));
+				row.setIncrementUnit(rs.getDouble("increment_unit"));
+				row.setDiscount(rs.getDouble("discount_rate"));
+				row.setCategory(rs.getString("category"));
+				products.add(row);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return products;
+	}
+	
 	public boolean editProductInfo(Product p) {
 		boolean test = false;
 		try {
@@ -116,5 +166,4 @@ public class ProductDao {
 			e.printStackTrace();
 		}
 	}
-	
 }

@@ -80,4 +80,11 @@ public class Product implements Message{
 	public void DisplayFailedMessage() {
 		System.out.println("Failed for the product");
 	}
+	
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", quantity=" + quantity + ", unitPrice=" + unitPrice
+				+ ", incrementUnit=" + incrementUnit + ", discount=" + discount + ", category=" + category + "]";
+	}
+	
 }
