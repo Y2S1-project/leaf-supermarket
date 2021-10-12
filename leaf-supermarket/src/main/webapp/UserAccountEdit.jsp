@@ -14,37 +14,59 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>User Account Update</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <style>
-            
-            .button {
-  background-color: #4CAF50;
-  border: none;
-  color: Green;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+body{
+	 background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bgi.jpg);
+	background-size:cover;
+                   
 }
+        
+  .button {
+            background-color: #4CAF50;
+            border: none;
+            color: Green;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+          }
             
             
-            .inner{
-                position: relative;
-                margin: 0 auto;
-                width: 650px;
-                display: block;
-                padding: 50px 0;
-            }
-            h3{
-                text-align: center;
-                border-bottom: 2px solid midnightblue;
-                margin-bottom: 20px;
-            }
+     .inner{   
+              position: relative;
+              margin: 0 auto;
+              width: 650px;
+              display: block;
+              padding: 50px 0;
+      }
+            
+            
+       h3{
+              text-align: center;
+              border-bottom: 2px solid midnightblue;
+              margin-bottom: 20px;
+       }
+      label{
+          	color:white;
+      }
         </style>
+        <script type="text/javascript">
+    	function Validate() {
+        	var password = document.getElementById("password").value;
+        	var confirmPassword = document.getElementById("confirm-password").value;
+        	if (password != confirmPassword) {
+            	alert("Passwords do not match.");
+            	return false;
+        	}
+        	return true;
+   		}
+	</script> 
 </head>
 <body>
 
@@ -64,17 +86,22 @@
                                 <input class="form-control" name="email" value="${edit_User.email }" required>
                             </div>
 							<div class="form-group">
-                                <label>User Password</label>
-                                <input class="form-control" type="password" name="password" value="" >
+                                <label>New Password</label>
+                                <input type="password" class="form-control" name="password" id="password"placeholder="new Password" >
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" class="form-control" name="confirm-password" id="confirm-password" placeholder="Re-enter Password" >
                             </div>
   
-							<button type="submit" class="button">Edit</button>
+							<button type="submit" onclick="return Validate()" class="button">Edit</button>
 							 <a href="UserAccountDelete.jsp?id=<%=id %>"><button type="button" class="button">Delete</button></a>
                       </form>
  </div>
 </div>
 </div>
-</div>                     
+</div> 
+                  
 </body>
 </html>
 <% }else{
