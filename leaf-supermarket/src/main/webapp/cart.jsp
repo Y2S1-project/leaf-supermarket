@@ -56,7 +56,7 @@
 						<tr>
 						<td><%= c.getName() %></td>
 						<td><%= c.getCategory() %></td>
-						<td><%= c.getUnitPrice() * c.getQuantity( ) %></td>
+						<td><%= c.getUnitPrice() %></td>
 						<td>
 							<form action="" method="post" class="form-inline">
 								<input type="hidden" name="id" value="<%= c.getIncrementUnit() %>" class="form-input">

@@ -13,7 +13,7 @@ public class Product implements Message{
 	public Product() {
 		
 	}
-	public Product(int id, String name, double quantity, double unitPrice, double incrementUnit, double discount, String category, String image) {
+	public Product(int id, String name, double quantity, double unitPrice, double incrementUnit, double discount, String category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -22,8 +22,17 @@ public class Product implements Message{
 		this.incrementUnit = incrementUnit;
 		this.discount = discount;
 		this.category = category;
-		this.image = image;
 	}
+	public Product(String name, double quantity, double unitPrice, double incrementUnit, double discount, String category) {
+		super();
+		this.name = name;
+		this.quantity = quantity;
+		this.unitPrice = unitPrice;
+		this.incrementUnit = incrementUnit;
+		this.discount = discount;
+		this.category = category;
+	}
+	
 	public Product(String name, double quantity, double unitPrice, double incrementUnit, double discount, String category, String image) {
 		super();
 		this.name = name;
@@ -34,6 +43,7 @@ public class Product implements Message{
 		this.category = category;
 		this.image = image;
 	}
+	
 	public String getImage() {
 		return image;
 	}

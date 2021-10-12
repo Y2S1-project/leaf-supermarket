@@ -181,16 +181,16 @@ public class ProductDao {
         try {
             if (cartList.size() > 0) {
                 for (Cart item : cartList) {
-                    String query = "select * from products where id=?";
+                    String query = "select * from product where product_id=?";
                     pst = this.con.prepareStatement(query);
                     pst.setInt(1, item.getId());
                     rs = pst.executeQuery();
                     while (rs.next()) {
                         Cart row = new Cart();
-                        row.setId(rs.getInt("id"));
-                        row.setName(rs.getString("name"));
+                        row.setId(rs.getInt("product_id"));
+                        row.setName(rs.getString("product_name"));
                         row.setCategory(rs.getString("category"));
-                        row.setUnitPrice(rs.getDouble("price")*item.getQuantity());
+                        row.setUnitPrice(rs.getDouble("unit_price")*item.getQuantity());
                         row.setQuantity(item.getQuantity());
                         products.add(row);
                     }
