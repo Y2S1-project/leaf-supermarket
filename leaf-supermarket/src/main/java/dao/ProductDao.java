@@ -12,6 +12,7 @@ public class ProductDao {
 	Connection con ;
 	private PreparedStatement pst;
 	private ResultSet rs;
+	private String query;
 	
 	public ProductDao(Connection con) {
 	        this.con = con;
@@ -20,7 +21,7 @@ public class ProductDao {
 	public boolean saveProduct(Product product){
         boolean set = false;
         try{
-           String query = "insert into product(product_name,quantity,unit_price,image,increment_unit,discount_rate,category) values(?,?,?,?,?,?,?)";
+            query = "insert into product(product_name,quantity,unit_price,image,increment_unit,discount_rate,category) values(?,?,?,?,?,?,?)";
            
            PreparedStatement pt = this.con.prepareStatement(query);
            pt.setString(1, product.getName());
@@ -42,7 +43,7 @@ public class ProductDao {
 	public List<Product> getAllProducts(){
 		List<Product> products = new ArrayList<Product>();
 		try {
-			String query="select * from product";
+			query="select * from product";
 			PreparedStatement pt = this.con.prepareStatement(query);
 			ResultSet rs=pt.executeQuery();
 			while(rs.next()) {
@@ -66,7 +67,7 @@ public class ProductDao {
 	public Product getSingleProduct(int id) {
 		Product p  = null;
 		try {
-			String query = "select * from product where product_id=?";
+			query = "select * from product where product_id=?";
 			PreparedStatement pt = this.con.prepareStatement(query);
 			pt=this.con.prepareStatement(query);
 			pt.setInt(1, id);
@@ -204,4 +205,28 @@ public class ProductDao {
         }
         return products;
     }
+    
+    public double getTotalCartPrice(ArrayList<Cart> cartList) {
+        double sum = 0;
+        try {
+            if (cartList.size() > 0) {
+                for (Cart item : cartList) {
+                    query = "select price from products where id=?";
+                    pst = this.con.prepareStatement(query);
+                    pst.setInt(1, item.getId());
+                    rs = pst.executeQuery();
+                    while (rs.next()) {
+                        sum+=rs.getDouble("price")*item.getQuantity();
+                    }
+
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return sum;
+    }
+
 }
