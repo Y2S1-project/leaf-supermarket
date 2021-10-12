@@ -8,9 +8,14 @@
 	<meta name = "viewport" content ="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel = "stylesheet" href="styles/contact.css">
+	<%@include file="includes/head.jsp" %>
+	<link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-	<div class="contact">
+<header>
+	<%@include file="includes/navbar.jsp" %>
+</header>
+	<div class="contact1">
 	<section class="contact-area">
 		<div class="container">
 			<div class="row">
@@ -43,7 +48,7 @@
 								</select>
 							</div>
 							<div class="col-md-12">
-								<textarea name = "message" placeholder ="Message Here" required></textarea>
+								<textarea name = "message" id="msg" placeholder ="Message Here" required></textarea>
 							</div>
 							<div class="col-md-12">
 								<div class="contact-btn">
@@ -57,5 +62,32 @@
 		</div>
 	</section><br><br>
 	</div>
+	<footer>
+<script>
+
+let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+let header = document.querySelector('.header-2');
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+
+    if(window.scrollY > 150){
+        header.classList.add('active');
+    }else{
+        header.classList.remove('active');
+    }
+
+}
+
+</script>
+<%@include file="includes/footer.jsp" %>
+</footer>
 </body>
 </html>
