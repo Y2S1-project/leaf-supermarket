@@ -14,8 +14,13 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel = "stylesheet" href="styles/display.css">
 	<meta charset="ISO-8859-1">
+	<%@include file="includes/head.jsp" %>
+	<link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
+<header>
+	<%@include file="includes/navbar.jsp" %>
+</header>
 	<div class="inside">
 		<div class="col-md-12">
          	<center><h3 class="Ptitle">-Product Information-</h3></center><br>
@@ -50,6 +55,33 @@
           	</table>
 		</div>
 	</div>
+	<footer>
+<script>
+
+let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+let header = document.querySelector('.header-2');
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+
+    if(window.scrollY > 150){
+        header.classList.add('active');
+    }else{
+        header.classList.remove('active');
+    }
+
+}
+
+</script>
+<%@include file="includes/footer.jsp" %>
+</footer>
 </body>
 </html>
 <%}else{
