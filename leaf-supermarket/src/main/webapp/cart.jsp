@@ -12,14 +12,17 @@
 	if(cart_list != null) {
 		ProductDao pDao = new ProductDao(DbCon.getConnection());
 		cartProduct = pDao.getCartProducts(cart_list);
+		double total = pDao.getTotalCartPrice(cart_list);
 		request.setAttribute("cart_list", cart_list);
+		request.setAttribute("total", total);
 	}
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Leaf | Cart</title>
-<%@include file="includes/bootstrap-head.jsp"%>
+<%@include file="includes/bootstrap-head.jsp" %>
+
 <style type="text/css">
 .table tbody td {
 	vertical-align: middle;
@@ -32,10 +35,10 @@
 </style>
 </head>
 <body>
-
+	
 	<div class="container">
 		<div class="d-flex py-3">
-			<h3>Total Price: $ 452</h3>
+			<h3>Total Price: Rs. ${ total } </h3>
 			<a class="mx-3 btn btn-primary" href="#">Check Out</a>
 		</div>
 		<table class="table table-loght">
@@ -44,7 +47,7 @@
 					<th scope="col">Name</th>
 					<th scope="col">Category</th>
 					<th scope="col">Price</th>
-					<th scope="col">Buy Now</th>
+					<th scope="col">Quantity</th>
 					<th scope="col">Cancel</th>
 				</tr>
 			</thead>
@@ -61,11 +64,11 @@
 							<form action="" method="post" class="form-inline">
 								<input type="hidden" name="id" value="1" class="form-input">
 								<div class="form=group d-flex justify-content-between">
-									<a class="btn btn-sm btn-decre" href=""><i
-										class="fas fa-minus-square"></i></a> <input type="text"
-										name="quantity" class="form-control" value="<%= c.getIncrementUnit() %>" readonly>
-									<a class="btn btn-sm btn-incre" href=""><i
-										class="fas fa-plus-square"></i></a>
+									<!-- <a class="btn btn-sm btn-decre"  href="quantity-inc-dec?action=dec&id=<%//= c.getId()%>"<i
+										class="fas fa-minus-square"></i></a> -->
+										<input type="number" name="quantity" class="form-control" value=<%= c.getQuantity() %> max="2000" min="1" step=<%= c.getIncrementUnit() %> >
+									<!--  <a class="btn btn-sm btn-incre" href="quantity-inc-dec?action=inc&id=<%= c.getId()%>"><i
+										class="fas fa-plus-square"></i></a> -->
 								</div>
 							</form>
 						<td><a class="btn btn-sm btn-danger" href="">Remove</a></td>

@@ -11,11 +11,13 @@ List<Product> products = pd.getCategoryProducts(1);
 <!DOCTYPE html>
 <html>
 <head>
-<%@include file="includes/bootstrap-head.jsp"%>
+<%@include file="includes/bootstrap-head.jsp" %>
 <title>Insert title here</title>
 <link rel="stylesheet" href="styles/vegetable.css">
+
 </head>
 <body>
+
 	<div class="container">
 		<div class="card-header my-3">Vegetables</div>
 		<div class="row">
@@ -34,9 +36,7 @@ List<Product> products = pd.getCategoryProducts(1);
 								<form action="add-to-cart?id=<%= p.getId() %>" method="post" class="form-inline">
 									<input type="hidden" name="id" value="1" class="form-input">
 									<div class="form=group d-flex justify-content-between">
-										<a class="btn btn-sm btn-decre" href=""><i class="fas fa-minus-square"></i></a> 
-										<input type="text" name="quantity" class="form-control form-sm" value=<%= p.getIncrementUnit() %> id="quantityBox" readonly>
-										<a class="btn btn-sm btn-incre" href=""><i class="fas fa-plus-square"></i></a>
+										<input type="number" name="quantity" class="form-control" value=<%= p.getIncrementUnit() %> max="2000" min="1" step=<%= p.getIncrementUnit() %> >
 									</div>
 								</form>
 							</div>

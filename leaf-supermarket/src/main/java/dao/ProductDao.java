@@ -10,6 +10,7 @@ import java.sql.Connection;
 
 public class ProductDao {
 	Connection con ;
+	private String query;
 	
 	public ProductDao(Connection con) {
 	        this.con = con;
@@ -185,6 +186,7 @@ public class ProductDao {
                         row.setName(rs.getString("product_name"));
                         row.setCategory(rs.getString("category"));
                         row.setUnitPrice(rs.getDouble("unit_price")*item.getQuantity());
+                        row.setIncrementUnit(rs.getDouble("increment_unit"));
                         row.setQuantity(item.getQuantity());
                         products.add(row);
                     }
@@ -204,12 +206,12 @@ public class ProductDao {
         try {
             if (cartList.size() > 0) {
                 for (Cart item : cartList) {
-                    String query = "select price from product where id=?";
+                    query = "select unit_price from product where product_id=?";
                     PreparedStatement pst = this.con.prepareStatement(query);
                     pst.setInt(1, item.getId());
                     ResultSet rs = pst.executeQuery();
                     while (rs.next()) {
-                        sum+=rs.getDouble("unit_price")*item.getQuantity();
+                        sum+=rs.getDouble("unit_price") * item.getQuantity();
                     }
 
                 }
