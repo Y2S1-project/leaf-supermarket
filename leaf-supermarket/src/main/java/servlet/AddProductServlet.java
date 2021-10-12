@@ -33,7 +33,7 @@ public class AddProductServlet extends HttpServlet {
 		String category = request.getParameter("category");
 		
 		try {
-			Product productModel = new Product(name,quantity,unitPrice,discount,incrementUnit,category);
+			Product productModel = new Product(name,quantity,unitPrice,incrementUnit,discount,category);
 			ProductDao product = new ProductDao(DbCon.getConnection());
 			if (product.saveProduct(productModel)) {
 				productModel.DisplaySuccessMessage();
