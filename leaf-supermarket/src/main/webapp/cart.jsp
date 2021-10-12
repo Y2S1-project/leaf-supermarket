@@ -1,3 +1,4 @@
+<%if(session.getAttribute("auth") != null && session.getAttribute("auth1") == null){ %>
 <%@page import="connection.DbCon"%>
 <%@page import="dao.ProductDao"%>
 <%@page import="model.*"%>
@@ -89,3 +90,9 @@
 	<%@include file="includes/bootstrap-body.jsp"%>
 </body>
 </html>
+<%}else{
+   response.sendRedirect("index.jsp");
+   }
+%>
+   
+   
