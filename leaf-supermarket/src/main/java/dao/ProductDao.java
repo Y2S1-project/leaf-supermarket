@@ -210,12 +210,12 @@ public class ProductDao {
         try {
             if (cartList.size() > 0) {
                 for (Cart item : cartList) {
-                    query = "select price from products where id=?";
+                    query = "select price from product where id=?";
                     pst = this.con.prepareStatement(query);
                     pst.setInt(1, item.getId());
                     rs = pst.executeQuery();
                     while (rs.next()) {
-                        sum+=rs.getDouble("price")*item.getQuantity();
+                        sum+=rs.getDouble("unit_price")*item.getQuantity();
                     }
 
                 }
