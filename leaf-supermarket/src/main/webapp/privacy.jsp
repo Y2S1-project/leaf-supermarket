@@ -5,9 +5,14 @@
 	<title>Privacy & Policy</title>
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="styles/privacy.css">
+	<%@include file="includes/head.jsp" %>
+	<link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-	  <center><h1 id="ct_h1">Privacy Policy & Terms of Usage</h1></center>     
+<header>
+	<%@include file="includes/navbar.jsp" %>
+</header>
+	<br>  <center><h1 id="ct_h1">Privacy Policy & Terms of Usage</h1></center>     
             <div class="p_t">	
 				<h2 class="thath_h1">Privacy Policy</h2>
 				<p>Leaf is committed to protect your privacy. This privacy Policy explains how your personal information is collected, used, and disclosed by Leaf.</p>
@@ -79,6 +84,33 @@
 				<p>Feel free to contact us</p>
 				<li>Via Email: leaf.super0@gmail.com</li>
 				
-			</div>	
+			</div><br>
+<footer>
+<script>
+
+let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+let header = document.querySelector('.header-2');
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+
+    if(window.scrollY > 150){
+        header.classList.add('active');
+    }else{
+        header.classList.remove('active');
+    }
+
+}
+
+</script>
+<%@include file="includes/footer.jsp" %>
+</footer>	
 </body>
 </html>
