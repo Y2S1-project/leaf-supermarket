@@ -33,6 +33,7 @@
 	background:rgba(136,133,133,0.5);
 	font-weight:500;
 	color:white;
+	font-size:15px;
 }
 .contact1 .contact-form textarea{
 	width:100%;
@@ -59,6 +60,7 @@
 .contact1 .contact-form ::placeholder{
 	color:white;
 	font-weight:500;
+	font-size:15px;
 }
 
 
