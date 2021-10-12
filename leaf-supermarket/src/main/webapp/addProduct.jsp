@@ -138,8 +138,7 @@
 			</div>
 		</div>
 	</div>
-</body>
-<footer>
+	<footer>
 <script>
 
 let menu = document.querySelector('#menu-bar');
@@ -166,7 +165,9 @@ window.onscroll = () =>{
 </script>
 <%@include file="includes/footer.jsp" %>
 </footer>
+</body>
 </html>
 <% }else{
 	response.sendRedirect("login.jsp");
 }%>
+
