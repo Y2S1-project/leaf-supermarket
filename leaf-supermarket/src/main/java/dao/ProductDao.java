@@ -151,6 +151,15 @@ public class ProductDao {
 			if(id == 9) {
 				query="select * from product where category = 'Food Cupboard'";
 			}
+			if(id == 10) {
+				query="select * from product where category = 'Personal Care'";
+			}
+			if(id == 11) {
+				query="select * from product where category = 'Housholed'";
+			}
+			if(id == 12) {
+				query="select * from product where category = 'Personal Safty'";
+			}
 			PreparedStatement pt = this.con.prepareStatement(query);
 			ResultSet rs=pt.executeQuery();
 			while(rs.next()) {
@@ -201,27 +210,98 @@ public class ProductDao {
         return products;
     }
 	
-	public double getTotalCartPrice(ArrayList<Cart> cartList) {
-        double sum = 0;
-        try {
-            if (cartList.size() > 0) {
-                for (Cart item : cartList) {
-                    query = "select unit_price from product where product_id=?";
-                    PreparedStatement pst = this.con.prepareStatement(query);
-                    pst.setInt(1, item.getId());
-                    ResultSet rs = pst.executeQuery();
-                    while (rs.next()) {
-                        sum+=rs.getDouble("unit_price") * item.getQuantity();
-                    }
-
-                }
-            }
-
-        } catch (SQLException e) {
+	public boolean insertToCart(Product product){
+        boolean set = false;
+        try{
+           String query = "insert into cart(user_id, product_id, total, quantity) values(?,?,?,?)";
+           
+           PreparedStatement pt = this.con.prepareStatement(query);
+           pt.setInt(1, product.getUserId());
+           pt.setInt(2, product.getId());
+           pt.setDouble(3, product.getUnitPrice()*product.getIncrementUnit());
+           pt.setDouble(4, product.getIncrementUnit());
+           pt.executeUpdate();
+           set = true;
+           
+        }catch(Exception e){
             e.printStackTrace();
-            System.out.println(e.getMessage());
         }
-        return sum;
+        return set;
     }
+	
+	public List<Product> displayCartProducts(){
+		List<Product> products = new ArrayList<Product>();
+		try {
+			String query="select * from cart c, product p where p.product_id = c.product_id";
+			PreparedStatement pt = this.con.prepareStatement(query);
+			ResultSet rs=pt.executeQuery();
+			while(rs.next()) {
+				Product row = new Product();
+				row.setId(rs.getInt("product_id"));
+				row.setName(rs.getString("product_name"));
+				row.setCategory(rs.getString("category"));
+				row.setUnitPrice(rs.getDouble("unit_price"));
+				row.setIncrementUnit(rs.getDouble("increment_unit"));
+				row.setInc(rs.getDouble("quantity"));
+				products.add(row);
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return products;
+		
+	}
+
+	public boolean editQuantity(Product p) {
+		boolean test = false;
+		try {
+			String query = "update cart set quantity=?, total=? where product_id=?";
+			PreparedStatement pt = this.con.prepareStatement(query);
+			pt=this.con.prepareStatement(query);
+			System.out.println(p.getInc() + "ID: "+ p.getId());
+			pt.setDouble(1,p.getInc());
+			pt.setDouble(2, p.getUnitPrice()*p.getInc());
+			pt.setInt(3,p.getId());
+			pt.executeUpdate();
+			test = true;
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return test;
+	}
+	public double getTotal(int id) {
+		double total = 0.0;
+		try {
+			String query = "select sum(total) from cart where user_id=?";
+			PreparedStatement pt = this.con.prepareStatement(query);
+			pt=this.con.prepareStatement(query);
+			pt.setInt(1, id);
+			ResultSet rs = pt.executeQuery();
+			while(rs.next()) {
+				total += rs.getDouble(1);
+			}
+			return total; 			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return 0.0; 
+	}
+	
+	public void removeProductFromCart(int userId, int productId) {
+		try {
+			String query = "delete from cart where user_id =? and product_id=?";
+			PreparedStatement pt = this.con.prepareStatement(query);
+			pt=this.con.prepareStatement(query);
+			pt.setInt(1, userId);
+			pt.setInt(2, productId);
+			pt.execute();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 }
