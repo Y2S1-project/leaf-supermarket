@@ -77,11 +77,10 @@ public class ProductDao {
 				String name = rs.getString("product_name");
 				double quantity = rs.getDouble("quantity");
 				double unitPrice = rs.getDouble("unit_price");
-				String image = rs.getString("image");
 				double incrementUnit = rs.getDouble("increment_unit");
 				double discount = rs.getDouble("discount_rate");
 				String category = rs.getString("category");
-				p = new Product(pid,name,quantity,unitPrice,discount,incrementUnit,image,category);
+				p = new Product(pid,name,quantity,unitPrice,discount,incrementUnit,category);
 			}
 		
 		}catch(Exception e) {
