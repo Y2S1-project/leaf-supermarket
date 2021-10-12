@@ -19,29 +19,17 @@
          	padding: 50px 0;
          	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
      	}
-     	.inside h3{
+     	.inside .inner .container h3{
          	text-align: center;
          	margin-bottom: 20px;
          	color:white;
          	font-weight:700;
-		 	font-size:2em;
+		 	font-size:25px;
       	}
-      	.inside .form-group{
+      	.inside .inner .container .form-group{
          	color:white;
       	}
-      	.inside .form-group input{
-         	width:100%;
-			padding : 10px 20px;
-			outline :none;
-			font-weight:400;
-			border:2px solid #607d8b;
-			font-size:16px;
-			letter-spacing:1px;
-			color:#607d8b;
-			background:transparent;
-			border-radius:30px;	
-      	}
-      	.inside .form-group select{
+      	.inside .inner .container .form-group input{
          	width:100%;
 			padding : 10px 20px;
 			outline :none;
@@ -53,6 +41,22 @@
 			background:transparent;
 			border-radius:30px;	
 			height:47px;
+      	}
+      	.inside .inner .container .form-group select{
+         	width:100%;
+			padding : 10px 20px;
+			outline :none;
+			font-weight:400;
+			border:2px solid #607d8b;
+			font-size:16px;
+			letter-spacing:1px;
+			color:#607d8b;
+			background:transparent;
+			border-radius:30px;	
+			height:47px;
+      	}
+      	.inside .inner .container .form-group label{
+      		font-size:18px;
       	}
       	.mybtn{
       		width:100%;
@@ -76,11 +80,16 @@
 			}	
 		}
 	</style>
+	<%@include file="includes/head.jsp" %>
+	<link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
+<header>
+	<%@include file="includes/navbar.jsp" %>
+</header>
 	<div class="inside">
    		<div class="inner">
-            <div class=" container">
+            <div class="container">
                 <div class="row">
                     <div class="col-12">
        					<h3>Add New Product</h3>
@@ -130,6 +139,33 @@
 		</div>
 	</div>
 </body>
+<footer>
+<script>
+
+let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+let header = document.querySelector('.header-2');
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+
+    if(window.scrollY > 150){
+        header.classList.add('active');
+    }else{
+        header.classList.remove('active');
+    }
+
+}
+
+</script>
+<%@include file="includes/footer.jsp" %>
+</footer>
 </html>
 <% }else{
 	response.sendRedirect("login.jsp");
