@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import model.*;
 import java.sql.Connection;
 
@@ -116,5 +118,108 @@ public class ProductDao {
 			e.printStackTrace();
 		}
 	}
+	
+	public List<Product> getCategoryProducts(int id){
+		List<Product> products = new ArrayList<Product>();
+		String query = null;
+		try {
+			if(id == 1) {
+				query="select * from product where category = 'Vegetable'";
+			}
+			if(id == 2) {
+				query="select * from product where category = 'Fruit'";
+			}
+			if(id == 3) {
+				query="select * from product where category = 'Bakery'";
+			}
+			if(id == 4) {
+				query="select * from product where category = 'Frozen Food'";
+			}
+			if(id == 5) {
+				query="select * from product where category = 'Beverages'";
+			}
+			if(id == 6) {
+				query="select * from product where category = 'Dairy'";
+			}
+			if(id == 7) {
+				query="select * from product where category = 'Pharmacy'";
+			}
+			if(id == 8) {
+				query="select * from product where category = 'Baby Products'";
+			}
+			if(id == 9) {
+				query="select * from product where category = 'Food Cupboard'";
+			}
+			PreparedStatement pt = this.con.prepareStatement(query);
+			ResultSet rs=pt.executeQuery();
+			while(rs.next()) {
+				Product row = new Product();
+				row.setId(rs.getInt("product_id"));
+				row.setName(rs.getString("product_name"));
+				row.setQuantity(rs.getDouble("quantity"));
+				row.setUnitPrice(rs.getDouble("unit_price"));
+				row.setImage(rs.getString("image"));
+				row.setIncrementUnit(rs.getDouble("increment_unit"));
+				row.setDiscount(rs.getDouble("discount_rate"));
+				row.setCategory(rs.getString("category"));
+				products.add(row);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return products;
+	}
+	
+	public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
+        List<Cart> products = new ArrayList<>();
+        try {
+            if (cartList.size() > 0) {
+                for (Cart item : cartList) {
+                    String query = "select * from product where product_id=?";
+                    PreparedStatement pst = this.con.prepareStatement(query);
+                    pst.setInt(1, item.getId());
+                    ResultSet rs = pst.executeQuery();
+                    while (rs.next()) {
+                        Cart row = new Cart();
+                        row.setId(rs.getInt("product_id"));
+                        row.setName(rs.getString("product_name"));
+                        row.setCategory(rs.getString("category"));
+                        row.setUnitPrice(rs.getDouble("unit_price")*item.getQuantity());
+                        row.setQuantity(item.getQuantity());
+                        products.add(row);
+                    }
+
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return products;
+    }
+	
+	public double getTotalCartPrice(ArrayList<Cart> cartList) {
+        double sum = 0;
+        try {
+            if (cartList.size() > 0) {
+                for (Cart item : cartList) {
+                    String query = "select price from product where id=?";
+                    PreparedStatement pst = this.con.prepareStatement(query);
+                    pst.setInt(1, item.getId());
+                    ResultSet rs = pst.executeQuery();
+                    while (rs.next()) {
+                        sum+=rs.getDouble("unit_price")*item.getQuantity();
+                    }
+
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return sum;
+    }
 	
 }
