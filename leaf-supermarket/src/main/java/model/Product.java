@@ -33,22 +33,18 @@ public class Product implements Message{
 		this.category = category;
 	}
 	
-	public Product(int pid, String name2, double quantity2, double unitPrice2, double discount2, double incrementUnit2, String image2, String category2) {
+	public Product(int id, String name, double quantity, double unitPrice, double incrementUnit, double discount, String category, String image) {
 		super();
-		this.name = name2;
-		this.quantity = quantity2;
-		this.unitPrice = unitPrice2;
-		this.discount = discount2;
-		this.incrementUnit = incrementUnit2;
-		this.image = image2;
-		this.category = category2;
-	}
-	public String getImage() {
-		return image;
-	}
-	public void setImage(String image) {
+		this.id = id;
+		this.name = name;
+		this.quantity = quantity;
+		this.unitPrice = unitPrice;
+		this.incrementUnit = incrementUnit;
+		this.discount = discount;
+		this.category = category;
 		this.image = image;
 	}
+	
 	public String getName() {
 		return name;
 	}
@@ -91,7 +87,12 @@ public class Product implements Message{
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 	public void DisplaySuccessMessage(){
 		System.out.println("Success for the product");
 	}

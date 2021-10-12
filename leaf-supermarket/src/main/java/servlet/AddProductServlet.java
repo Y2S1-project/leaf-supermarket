@@ -28,13 +28,12 @@ public class AddProductServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		double quantity = Double.parseDouble(request.getParameter("quantity"));
 		double unitPrice = Double.parseDouble(request.getParameter("unitPrice"));
-		String image = request.getParameter("image");
 		double incrementUnit = Double.parseDouble(request.getParameter("incrementUnit"));
 		double discount = Double.parseDouble(request.getParameter("discount"));
 		String category = request.getParameter("category");
 		
 		try {
-			Product productModel = new Product(name,quantity,unitPrice,discount,incrementUnit,image,category);
+			Product productModel = new Product(name,quantity,unitPrice,incrementUnit,discount,category);
 			ProductDao product = new ProductDao(DbCon.getConnection());
 			if (product.saveProduct(productModel)) {
 				productModel.DisplaySuccessMessage();
