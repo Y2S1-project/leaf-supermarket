@@ -14,9 +14,42 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<title>User Account Delete</title>
 
 <style>
+		.card {
+  			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  			transition: 0.3s;
+  			width: 40%;
+  			height:200px;
+  			margin-right:20px;
+  			margin-left:400px;
+  			margin-top:150px;
+  			background-color: #17141d;
+		}
+		.card:hover {
+  			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+		.container {
+  			padding: 2px 16px;
+		}
+		.header{
+			color: white;
+		}
+		@media(max-width:768px){
+			.card{
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				width:100%;
+				height:100%;
+				z-index:1;
+			}
+		}	
+
+
+
 
 
 .button {
@@ -30,31 +63,27 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 
 
-.text-block {
-  position:  relative;
-  up : 100px;
-  background-color: #7FFFD4;
-  align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+
 </style>
 </head>
 <body>
          <form action="UserAccountDeleteServlet" method="post">
                         
                           
-                              <div class="text-block">
+                              <div class="card">
+                              <img style="width:100%">
+  		                         <div class="container">
                                 <input type ="hidden" class="form-control" name="id" value="${edit_User.id }" required>
                                 <h1 style="color:Green;">Are you sure you want to delete your account?</h1><br>
                                         <button type="submit" class="button">Delete</button>
-                                        <a href="UserAccountEdit.jsp?id=<%=id %>"><button type="button" class="button">Cancle</button></a>        
+                                        <a href="UserAccountEdit.jsp?id=<%=id %>"><button type="button" class="button">Cancel</button></a>        
                                </div> 
-                                      
+                                      </div>
                                 </form>
                                  
 </body>
