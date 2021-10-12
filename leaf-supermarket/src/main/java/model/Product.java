@@ -8,11 +8,12 @@ public class Product implements Message{
 	private double incrementUnit;
 	private double discount;
 	private String category;
+	private String image;
 	
 	public Product() {
 		
 	}
-	public Product(int id, String name, double quantity, double unitPrice, double incrementUnit, double discount, String category) {
+	public Product(int id, String name, double quantity, double unitPrice, double incrementUnit, double discount, String category, String image) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -21,8 +22,9 @@ public class Product implements Message{
 		this.incrementUnit = incrementUnit;
 		this.discount = discount;
 		this.category = category;
+		this.image = image;
 	}
-	public Product(String name, double quantity, double unitPrice, double incrementUnit, double discount, String category) {
+	public Product(String name, double quantity, double unitPrice, double incrementUnit, double discount, String category, String image) {
 		super();
 		this.name = name;
 		this.quantity = quantity;
@@ -30,6 +32,13 @@ public class Product implements Message{
 		this.incrementUnit = incrementUnit;
 		this.discount = discount;
 		this.category = category;
+		this.image = image;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 	public String getName() {
 		return name;
