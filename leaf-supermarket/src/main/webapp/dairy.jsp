@@ -30,7 +30,6 @@ List<Product> products = pd.getCategoryProducts(6);
 						<div class="card-body">
 							<h5 class="card-title"><%= p.getName() %></h5>
 							<h6 class="price">Rs. <%= p.getUnitPrice() %></h6>
-							<h6 class="category"><%= p.getCategory() %></h6>
 							<div class="mt-3 d-flex justify-content-between">
 								<a href="add-to-cart?id=<%= p.getId() %>" class="btn btn-dark">Add to Cart</a>
 							</div>

@@ -151,6 +151,15 @@ public class ProductDao {
 			if(id == 9) {
 				query="select * from product where category = 'Food Cupboard'";
 			}
+			if(id == 10) {
+				query="select * from product where category = 'Personal Care'";
+			}
+			if(id == 11) {
+				query="select * from product where category = 'Housholed'";
+			}
+			if(id == 12) {
+				query="select * from product where category = 'Personal Safty'";
+			}
 			PreparedStatement pt = this.con.prepareStatement(query);
 			ResultSet rs=pt.executeQuery();
 			while(rs.next()) {
@@ -223,5 +232,47 @@ public class ProductDao {
         }
         return sum;
     }
+	
+	public boolean insertToCart(Product product){
+        boolean set = false;
+        try{
+           String query = "insert into cart(user_id, product_id, total) values(?,?,?)";
+           
+           PreparedStatement pt = this.con.prepareStatement(query);
+           pt.setInt(1, product.getUserId());
+           pt.setInt(2, product.getId());
+           pt.setDouble(3, product.getUnitPrice());
+           pt.executeUpdate();
+           set = true;
+           
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return set;
+    }
+	
+	public List<Product> displayCartProducts(){
+		List<Product> products = new ArrayList<Product>();
+		try {
+			String query="select * from cart c, product p where c.product_id = p.product_id";
+			PreparedStatement pt = this.con.prepareStatement(query);
+			ResultSet rs=pt.executeQuery();
+			while(rs.next()) {
+				Product row = new Product();
+				row.setName(rs.getString("product_name"));
+				row.setCategory(rs.getString("category"));
+				row.setUnitPrice(rs.getDouble("unit_price"));
+				row.setIncrementUnit(rs.getDouble("increment_unit"));
+				products.add(row);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println(((Product) products).getCategory());
+		return products;
+		
+	}
+
+
 	
 }

@@ -7,15 +7,17 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%
-	ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");	
-	List<Cart> cartProduct = null;
-	if(cart_list != null) {
-		ProductDao pDao = new ProductDao(DbCon.getConnection());
-		cartProduct = pDao.getCartProducts(cart_list);
-		double total = pDao.getTotalCartPrice(cart_list);
-		request.setAttribute("cart_list", cart_list);
-		request.setAttribute("total", total);
-	}
+	//ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");	
+	//List<Cart> cartProduct = null;
+	//if(cart_list != null) {
+		//ProductDao pDao = new ProductDao(DbCon.getConnection());
+		//cartProduct = pDao.getCartProducts(cart_list);
+		//double total = pDao.getTotalCartPrice(cart_list);
+		///request.setAttribute("cart_list", cart_list);
+		//request.setAttribute("total", total);
+	//}
+	 ProductDao pd=new ProductDao(DbCon.getConnection());
+    List<Product> products=pd.displayCartProducts(); 
 %>
 <!DOCTYPE html>
 <html>
@@ -53,30 +55,40 @@
 			</thead>
 			<tbody>
 			<%
-				if(cart_list != null) {
-					for(Cart c:cartProduct) { %>
+				//if(cart_list != null) {
+					//for(Cart c:cartProduct) { %>
+			<%if(!products.isEmpty()){
+						for(Product p:products){%>           
+						  <tr>
+                             <td><%= p.getName() %></td>
+                             <td><%= p.getCategory() %></td>
+                             <td><%= p.getUnitPrice() %></td>
+                             <td><%= p.getIncrementUnit() %></td>
+                         </tr>
+                        <%}
+                    }%>
 						
-						<tr>
-						<td><%= c.getName() %></td>
-						<td><%= c.getCategory() %></td>
-						<td><%= c.getUnitPrice() %></td>
+					<!-- 	<tr>
+					/<td><%//= c.getName() %></td>
+					<td><%//= c.getCategory() %></td>
+						<td><%//= c.getUnitPrice() %></td>
 						<td>
 							<form action="" method="post" class="form-inline">
 								<input type="hidden" name="id" value="1" class="form-input">
 								<div class="form=group d-flex justify-content-between">
 									<!-- <a class="btn btn-sm btn-decre"  href="quantity-inc-dec?action=dec&id=<%//= c.getId()%>"<i
 										class="fas fa-minus-square"></i></a> -->
-										<input type="number" name="quantity" class="form-control" value=<%= c.getQuantity() %> max="2000" min="1" step=<%= c.getIncrementUnit() %> >
-									<!--  <a class="btn btn-sm btn-incre" href="quantity-inc-dec?action=inc&id=<%= c.getId()%>"><i
+									<!-- 	<input type="number" name="quantity" class="form-control" value=<%//= c.getQuantity() %> max="2000" min="1" step=<%//= c.getIncrementUnit() %> > -->
+									<!--  <a class="btn btn-sm btn-incre" href="quantity-inc-dec?action=inc&id=<%//= c.getId()%>"><i
 										class="fas fa-plus-square"></i></a> -->
-								</div>
+						<!-- 
+						</div>
 							</form>
 						<td><a class="btn btn-sm btn-danger" href="">Remove</a></td>
-					</tr>
+					</tr> -->
 						 
-				<%	}
-				}
-			%>
+
+			<!-- %> -->
 
 			</tbody>
 		</table>

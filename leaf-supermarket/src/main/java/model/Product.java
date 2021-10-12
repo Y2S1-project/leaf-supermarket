@@ -9,6 +9,7 @@ public class Product implements Message{
 	private double discount;
 	private String category;
 	private String image;
+	private int userId;
 	
 	public Product() {
 		
@@ -43,6 +44,13 @@ public class Product implements Message{
 		this.discount = discount;
 		this.category = category;
 		this.image = image;
+	}
+	
+	public Product(int id, double unitPrice, int userId) {
+		super();
+		this.id = id;
+		this.unitPrice = unitPrice;
+		this.userId = userId;
 	}
 	
 	public String getName() {
@@ -92,6 +100,13 @@ public class Product implements Message{
 	}
 	public void setImage(String image) {
 		this.image = image;
+	}
+	
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public void DisplaySuccessMessage(){
 		System.out.println("Success for the product");
