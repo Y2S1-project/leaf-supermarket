@@ -33,12 +33,6 @@ List<Product> products = pd.getCategoryProducts(1);
 							<h6 class="category"><%= p.getCategory() %></h6>
 							<div class="mt-3 d-flex justify-content-between">
 								<a href="add-to-cart?id=<%= p.getId() %>" class="btn btn-dark">Add to Cart</a>
-								<form action="add-to-cart?id=<%= p.getId() %>" method="post" class="form-inline">
-									<input type="hidden" name="id" value="1" class="form-input">
-									<div class="form=group d-flex justify-content-between">
-										<input type="number" name="quantity" class="form-control" value=<%= p.getIncrementUnit() %> max="2000" min="1" step=<%= p.getIncrementUnit() %> >
-									</div>
-								</form>
 							</div>
 						</div>
 					</div>
