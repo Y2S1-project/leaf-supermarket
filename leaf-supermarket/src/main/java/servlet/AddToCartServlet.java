@@ -30,7 +30,8 @@ public class AddToCartServlet extends HttpServlet {
             cm.setId(id);
             cm.setQuantity(1);
             HttpSession session = request.getSession();
-            ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+            @SuppressWarnings("unchecked")
+			ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
             if (cart_list == null) {
                 cartList.add(cm);
                 session.setAttribute("cart-list", cartList);
