@@ -10,6 +10,7 @@ public class Product implements Message{
 	private String category;
 	private String image;
 	private int userId;
+	private double inc;
 	
 	public Product() {
 		
@@ -46,11 +47,12 @@ public class Product implements Message{
 		this.image = image;
 	}
 	
-	public Product(int id, double unitPrice, int userId) {
+	public Product(int id, double unitPrice, int userId, double incrementUnit) {
 		super();
 		this.id = id;
 		this.unitPrice = unitPrice;
 		this.userId = userId;
+		this.incrementUnit  = incrementUnit;
 	}
 	
 	public String getName() {
@@ -107,6 +109,14 @@ public class Product implements Message{
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	
+	public double getInc() {
+		return inc;
+	}
+	public void setInc(double inc) {
+		this.inc = inc;
+		System.out.println("Product.java "+inc);
 	}
 	public void DisplaySuccessMessage(){
 		System.out.println("Success for the product");

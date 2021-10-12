@@ -33,6 +33,7 @@ List<Product> products = pd.getCategoryProducts(1);
 							<input type="hidden" name="productID" value="<%= p.getId()%>">
 							<input type="hidden" name="userID" value="<%= id %>">
 							<input type="hidden" name="unitPrice" value="<%= p.getUnitPrice() %>">
+							<input type="hidden" name="increment-unit" value="<%= p.getIncrementUnit() %>">
 							<h5 class="card-title"><%= p.getName() %></h5>
 							<h6 class="price">Rs. <%= p.getUnitPrice() %></h6>
 							<div class="mt-3 d-flex justify-content-between">

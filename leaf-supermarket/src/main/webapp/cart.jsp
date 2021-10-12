@@ -17,7 +17,10 @@
 		//request.setAttribute("total", total);
 	//}
 	 ProductDao pd=new ProductDao(DbCon.getConnection());
-    List<Product> products=pd.displayCartProducts(); 
+    List<Product> products= pd.displayCartProducts(); 
+    ProductDao pd1 = new ProductDao(DbCon.getConnection());
+    double total = pd1.getTotal((int)session.getAttribute("auth"));
+    
 %>
 <!DOCTYPE html>
 <html>
@@ -40,7 +43,7 @@
 	
 	<div class="container">
 		<div class="d-flex py-3">
-			<h3>Total Price: Rs. ${ total } </h3>
+			<h3>Total Price: Rs. <%=total %> </h3>
 			<a class="mx-3 btn btn-primary" href="#">Check Out</a>
 		</div>
 		<table class="table table-loght">
@@ -50,45 +53,34 @@
 					<th scope="col">Category</th>
 					<th scope="col">Price</th>
 					<th scope="col">Quantity</th>
-					<th scope="col">Cancel</th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
-			<%
-				//if(cart_list != null) {
-					//for(Cart c:cartProduct) { %>
 			<%if(!products.isEmpty()){
 						for(Product p:products){%>           
 						  <tr>
                              <td><%= p.getName() %></td>
                              <td><%= p.getCategory() %></td>
-                             <td><%= p.getUnitPrice() %></td>
-                             <td><%= p.getIncrementUnit() %></td>
+                             <td><%= p.getUnitPrice()*p.getInc() %></td>
+                             <% total += p.getUnitPrice()*p.getInc();%>
+                             <td>                             
+                             	<form method="post" action="IncrementServlet">
+                             		<input type="hidden" name="product-id" value="<%= p.getId()%>">
+                             		<input type="hidden" name="unit-price" value="<%= p.getUnitPrice()%>">
+                             		<input type="number" name="increment" value="<%= p.getInc() %>" min=<%=p.getIncrementUnit() %> max=100 step="<%=p.getIncrementUnit() %>">
+                             		<button type="submit" class="btn btn-success">Submit</button>                             		
+                           		</form>
+                           		<form method="post" action="remove-product">
+                           			<input type="hidden" name="product-id" value="<%= p.getId()%>">
+                           			<input type="hidden" name="userId" value="<%= (int)session.getAttribute("auth")%>">
+                           			<button type="submit" class="btn btn-danger">Remove</button>
+                           		</form>
+                           		</td>
                          </tr>
                         <%}
                     }%>
-						
-					<!-- 	<tr>
-					/<td><%//= c.getName() %></td>
-					<td><%//= c.getCategory() %></td>
-						<td><%//= c.getUnitPrice() %></td>
-						<td>
-							<form action="" method="post" class="form-inline">
-								<input type="hidden" name="id" value="1" class="form-input">
-								<div class="form=group d-flex justify-content-between">
-									<!-- <a class="btn btn-sm btn-decre"  href="quantity-inc-dec?action=dec&id=<%//= c.getId()%>"<i
-										class="fas fa-minus-square"></i></a> -->
-									<!-- 	<input type="number" name="quantity" class="form-control" value=<%//= c.getQuantity() %> max="2000" min="1" step=<%//= c.getIncrementUnit() %> > -->
-									<!--  <a class="btn btn-sm btn-incre" href="quantity-inc-dec?action=inc&id=<%//= c.getId()%>"><i
-										class="fas fa-plus-square"></i></a> -->
-						<!-- 
-						</div>
-							</form>
-						<td><a class="btn btn-sm btn-danger" href="">Remove</a></td>
-					</tr> -->
-						 
-
-			<!-- %> -->
+		
 
 			</tbody>
 		</table>

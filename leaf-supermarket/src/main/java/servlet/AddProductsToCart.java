@@ -31,17 +31,18 @@ public class AddProductsToCart extends HttpServlet {
 		int productId = Integer.parseInt(request.getParameter("productID"));
 		int userId = Integer.parseInt(request.getParameter("userID"));
 		double unitPrice = Double.parseDouble(request.getParameter("unitPrice"));
+		double increment = Double.parseDouble(request.getParameter("increment-unit"));
 		
 		try {
-			Product productModel = new Product(productId, unitPrice, userId);
+			Product productModel = new Product(productId, unitPrice, userId, increment);
 			ProductDao product = new ProductDao(DbCon.getConnection());
 			if (product.insertToCart(productModel)) {
 				productModel.DisplaySuccessMessage();
-				response.sendRedirect("productSuccess.jsp");
+				response.sendRedirect("cart.jsp");
 			}
 			else {
 				productModel.DisplayFailedMessage();
-				response.sendRedirect("addProduct.jsp");
+				response.sendRedirect("index.jsp");
 			}
 		}catch(ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
