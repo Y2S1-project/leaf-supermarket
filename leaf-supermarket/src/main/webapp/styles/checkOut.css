@@ -1,0 +1,23 @@
+@charset "ISO-8859-1";
+
+.inactive{
+  display:none;  
+}
+
+.active{
+  display:block;
+}
+
+div.container{
+  display:flex;
+}
+
+.container #shippingDetails,
+.container #payment,
+.container #order-review{
+  border: 1px solid #000;
+}
+
+.summary ul li{
+  list-style:none;
+}

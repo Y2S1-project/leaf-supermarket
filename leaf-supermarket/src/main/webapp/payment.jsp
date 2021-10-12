@@ -4,6 +4,7 @@
 <html>
 <head>
 <%@include file="includes/head.jsp"%>
+<link rel="stylesheet" href="styles/payment.css">
 <title>Payment</title>
 </head>
 <body>
@@ -64,7 +65,7 @@
             </div>
             <input type="submit" value="Pay" id="pay">
          </form>
-            <a href="checkOut.jsp"><button>Cancel</button></a>
+            <button onclick="window.location.replace('cart.jsp')">Cancel</button>
       </div>
       <div class="right body">
          <h3>Your Order</h3>

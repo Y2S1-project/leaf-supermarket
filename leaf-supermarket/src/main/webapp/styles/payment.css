@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+
+.container{
+  display: flex;
+}
+
+.container .body{
+  border: 1px solid #000;
+}

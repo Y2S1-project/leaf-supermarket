@@ -42,7 +42,7 @@
          </div>
       </div>   
       <div class="box">
-         <h3>Customer Care</h3>
+         <h3>Customer Service</h3>
          <div class="links">
             <a href="about.jsp">about us</a>
             <a href="contact.jsp">contact us</a>

@@ -3,10 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
-User auth = (User) request.getSession().getAttribute("auth");
-if (auth != null) {
-	request.setAttribute("auth", auth);
-}
+if (session.getAttribute("auth1") == null) {
+
 %>
 <!DOCTYPE html>
 <html>
@@ -29,7 +27,7 @@ if (auth != null) {
 	<div class="container">
 		<div class="d-flex py-3">
 			<h3>Total Price: $ 452</h3>
-			<a class="mx-3 btn btn-primary" href="#">Check Out</a>
+			<a class="mx-3 btn btn-primary" href="checkOut.jsp">Check Out</a>
 		</div>
 		<table class="table table-loght">
 			<thead>
@@ -64,5 +62,6 @@ if (auth != null) {
 	</div>
 
 	<%@include file="includes/bootstrap-body.jsp"%>
+<%} %>
 </body>
 </html>

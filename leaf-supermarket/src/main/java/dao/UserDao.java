@@ -46,6 +46,8 @@ public class UserDao {
 				user.setId(rs.getInt("user_id"));
 				user.setName(rs.getString("user_name"));
 				user.setEmail(rs.getString("email"));
+				user.setTelephone(rs.getString("telephone"));
+				user.setAddress(rs.getString("address"));
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
