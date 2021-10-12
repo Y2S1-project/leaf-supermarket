@@ -35,6 +35,7 @@ public class Product implements Message{
 	
 	public Product(int pid, String name2, double quantity2, double unitPrice2, double discount2, double incrementUnit2, String image2, String category2) {
 		super();
+		this.id = pid;
 		this.name = name2;
 		this.quantity = quantity2;
 		this.unitPrice = unitPrice2;
