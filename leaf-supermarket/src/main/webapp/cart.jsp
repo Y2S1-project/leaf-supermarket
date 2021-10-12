@@ -1,12 +1,19 @@
 <%@page import="connection.DbCon"%>
+<%@page import="dao.ProductDao"%>
 <%@page import="model.*"%>
+<%@page import="java.util.*" %>
+<%@page import="java.text.DecimalFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
 <%
-User auth = (User) request.getSession().getAttribute("auth");
-if (auth != null) {
-	request.setAttribute("auth", auth);
-}
+	ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");	
+	List<Cart> cartProduct = null;
+	if(cart_list != null) {
+		ProductDao pDao = new ProductDao(DbCon.getConnection());
+		cartProduct = pDao.getCartProducts(cart_list);
+		request.setAttribute("cart_list", cart_list);
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -42,23 +49,32 @@ if (auth != null) {
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Women Shoes</td>
-					<td>Shoes</td>
-					<td>45$</td>
-					<td>
-						<form action="" method="post" class="form-inline">
-							<input type="hidden" name="id" value="1" class="form-input">
-							<div class="form=group d-flex justify-content-between">
-								<a class="btn btn-sm btn-decre" href=""><i
-									class="fas fa-minus-square"></i></a> <input type="text"
-									name="quantity" class="form-control" value="1" readonly>
-								<a class="btn btn-sm btn-incre" href=""><i
-									class="fas fa-plus-square"></i></a>
-							</div>
-						</form>
-					<td><a class="btn btn-sm btn-danger" href="">Remove</a></td>
-				</tr>
+			<%
+				if(cart_list != null) {
+					for(Cart c:cartProduct) { %>
+						
+						<tr>
+						<td><%= c.getName() %></td>
+						<td><%= c.getCategory() %></td>
+						<td><%= c.getUnitPrice() %></td>
+						<td>
+							<form action="" method="post" class="form-inline">
+								<input type="hidden" name="id" value="<%= c.getIncrementUnit() %>" class="form-input">
+								<div class="form=group d-flex justify-content-between">
+									<a class="btn btn-sm btn-decre" href=""><i
+										class="fas fa-minus-square"></i></a> <input type="text"
+										name="quantity" class="form-control" value="1" readonly>
+									<a class="btn btn-sm btn-incre" href=""><i
+										class="fas fa-plus-square"></i></a>
+								</div>
+							</form>
+						<td><a class="btn btn-sm btn-danger" href="">Remove</a></td>
+					</tr>
+						 
+				<%	}
+				}
+			%>
+
 			</tbody>
 		</table>
 	</div>
