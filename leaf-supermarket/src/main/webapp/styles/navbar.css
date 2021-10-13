@@ -104,10 +104,11 @@ section{
   width: 175px;
   height: auto;
   transform: translate(50px,-5px);
+  font-size: 30px;
 }
 
 .header-2 .cart{
-  width: 1.5rem;
+  width: 30px;
   height:auto;
 }
 
@@ -123,7 +124,7 @@ section{
 }
 
 .header-3 .search-box-container #search-box{
-  height: 2rem;
+  height: 3rem;
   width:100%;
   padding:1rem;
   font-size: 1rem;
@@ -133,7 +134,7 @@ section{
 }
 
 .header-3 .search-box-container label{
-  height: 2.21rem;
+  height: 3rem;
   width:5rem;
   padding:0.4rem;
   background:var(--green);
@@ -170,7 +171,7 @@ section{
 
 .header-2 .navbar a{
   padding:.5rem 1.5rem;
-  font-size: 1rem;
+  font-size: 20px;
   border-radius: .5rem;
 }
 
@@ -188,3 +189,6 @@ section{
   display: none;
 }
 
+.navbar a{
+	font-size: 30px;
+}

@@ -26,26 +26,30 @@
       <div class="box">
          <h3>categories</h3>
          <div class="links">
-             <a href="dairy.jsp">dairy</a>
-             <a href="babyProduct.jsp">baby products</a>
-             <a href="personalCare.jsp">personal care</a>
-             <a href="bakery.jsp">bakery</a>
-             <a href="beverage.jsp">beverages</a>
+             <a href="babyProduct.jsp">Baby Products</a>
+             <a href="bakery.jsp">Bakery</a>
+             <a href="baverages.jsp">Beverages</a>
+             <a href="dairy.jsp">Dairy Products</a>
+             <a href="food-cupboard.jsp">Food Cupboard</a>
+             <a href="frozen-food.jsp">Frozen Food</a> 
          </div>
       </div>
       <div class="box">
-         <h3>useful links</h3>
+        
          <div class="links">
-             <a href="index.jsp">home</a>                
-             <a href="product.jsp">product</a>                             
-             <a href="privacy.jsp">Privacy Policy</a>
+             <a href="fruit.jsp">Fruit</a>              
+             <a href="household.jsp">Household</a>                             
+             <a href="personal-care.jsp">Personal Care</a>
+             <a href="personal-safety.jsp">Personal Safety</a> 
+             <a href="pharmacy.jsp">Pharmacy</a> 
+             <a href="vegetable.jsp">Vegetable</a> 
          </div>
       </div>   
       <div class="box">
-         <h3>Customer Care</h3>
+         <h3>Useful Links</h3>
          <div class="links">
-            <a href="about.jsp">about us</a>
-            <a href="contact.jsp">contact us</a>
+            <a href="contact.jsp">Contact Us</a>
+            <a href="privacy.jsp">Privacy Policy</a>
          </div>   
       </div>
    </div>

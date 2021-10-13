@@ -60,23 +60,22 @@ if(session.getAttribute("auth") != null){
       <%
          } 
       %>  
-      <a href="product.jsp">product</a>  
+		<a href="vegetable.jsp">Vegetables</a>
+		<a href="fruit.jsp">Fruits</a>
+		<a href="dairy.jsp">Dairy</a>
+		<a href="bakery.jps">Bakery</a>
       <%
          if(session.getAttribute("auth1") == null){ 
       %>
       <a href="contact.jsp">Contact</a>
       <%
-         } 
+         }
       %>
    </nav>
    <div class="action">
       <a href="cart.jsp" onmouseover="active()" onmouseout="inactive()">
          <img class="cart" src="images/cart.svg" alt="shopping cart">
       </a>
-      <ul>
-         <li>total: Rs 400.00</li>
-      </ul>
-         <button>Go to Cart</button>
    </div>
 </div>
 

@@ -43,6 +43,9 @@ footer{
   color:#fff;
 }
 
+.footer .box-container .box .logo{
+	filter: brightness(0) invert();
+}
 .footer .box-container .box .share a{
   padding:0;
   height:4rem;

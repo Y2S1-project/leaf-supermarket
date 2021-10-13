@@ -44,7 +44,9 @@ html{
 .motto .flex{
   display:initial;
   padding-left: 225px;
+  font-size: 20px;
 }
+
 
 .banner-container{
   display: flex;
