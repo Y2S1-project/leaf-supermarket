@@ -45,7 +45,7 @@
 	<div class="container">
 		<div class="d-flex py-3">
 			<h3>Total Price: Rs. <%=total %> </h3>
-			<a class="mx-3 btn btn-primary" href="#">Check Out</a>
+			<a class="mx-3 btn btn-primary" href="checkOut.jsp?total=<%=total%>">Check Out</a>
 		</div>
 		<table class="table table-loght">
 			<thead>

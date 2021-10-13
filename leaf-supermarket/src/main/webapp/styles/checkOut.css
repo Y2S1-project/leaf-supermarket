@@ -1,0 +1,14 @@
+@charset "ISO-8859-1";
+
+.container{
+  display:flex;
+  padding-top:2rem;
+}
+
+.inactive{
+  display:none;
+}
+
+.active{
+  display: block;
+}

@@ -11,6 +11,7 @@ public class User implements Message {
 	private String cvv;
 	private String expMonth;
 	private String expYear;
+	private double total;
 
 	public User() {
 
@@ -32,6 +33,15 @@ public class User implements Message {
 	public User(String email, String password) {
 		this.email = email;
 		this.password = password;
+	}
+	
+	public User(int id, String telephone, String address, double total) {
+		this.id = id;
+		System.out.println(id);
+		this.telephone = telephone;
+		this.address = address;
+		this.total = total;
+		System.out.println("User.java: " + telephone + address+ total);
 	}
 
 	public int getId() {
@@ -112,6 +122,14 @@ public class User implements Message {
 
 	public void setExpYear(String expYear) {
 		this.expYear = expYear;
+	}
+
+	public double getTotal() {
+		return total;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
 	}
 
 	public void DisplaySuccessMessage() {

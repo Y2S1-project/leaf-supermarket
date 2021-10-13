@@ -10,18 +10,18 @@
 <div class="header-1">
    <span>
      <img class="log" src="images/user.svg">
-     Welcome,&nbsp
+     Welcome,&nbsp;
      <a class="profile" href="UserAccountDisplay.jsp">
       <%=name %>
      </a>
-     &nbsp&nbsp&nbsp|
+     &nbsp;&nbsp;&nbsp;|
    </span>
 <%
 if(session.getAttribute("auth") != null){ 
 %>
    <span class="log-right">
       <img class="log" src="images/logout.svg">
-      &nbsp
+      &nbsp;
       <a class="logout" href="LogOutServlet">
          Logout
       </a>
@@ -31,13 +31,13 @@ if(session.getAttribute("auth") != null){
 %>
    <span class="log-right">
       <img class="log" src="images/login.svg">
-      &nbsp
+      &nbsp;
       <a class="logout" href="login.jsp">
          Login
       </a>
    </span>
    <span>
-      &nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+      &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <a class="register" href="register.jsp">Register</a>
    </span>
 <%
