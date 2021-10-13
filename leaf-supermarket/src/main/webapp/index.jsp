@@ -60,7 +60,7 @@
             <p>To keep you safe</p>
             <h3>A range of Personal Safety products</h3>
             <p>To choose from</p>
-            <a href="dairy.jsp" class="btn">Explore range</a>
+            <a href="personal-care.jsp" class="btn">Explore range</a>
         </div>
     </div>
     <br><br> <br>
@@ -70,7 +70,7 @@
             <p>A range of </p>
             <h3>Delicious Beverages</h3>
             <p>To quench your thirst</p>
-            <a href="vegetable.jsp" class="btn">Explore fresh range</a>
+            <a href="beverages.jsp" class="btn">Explore fresh range</a>
         </div>
     </div>
 

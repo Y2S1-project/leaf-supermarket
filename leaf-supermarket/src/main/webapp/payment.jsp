@@ -12,38 +12,39 @@ double total = Double.parseDouble(request.getParameter("total"));
 <html>
 
 <head>
-	<%@include file="includes/head.jsp"%>
-	<link rel="stylesheet" href="styles/index.css">
 	<link rel="stylesheet" href="styles/payment.css">
 	<title>Payment</title>
 </head>
 
 <body>
-	<header>
-		<%@include file="includes/navbar.jsp" %>
-	</header>
+
 	<div class="block">
-		<img alt="" src="">
+		<img id="left" alt="leaf logo" src="images/Leaf.png">
+		<img id="right" alt="leaf logo" src="images/HNB.png">
 	</div>
 	<div class="container">
 		<div class="left body">
-			<h3>Payment Details</h3>
+			<h3 id="req">Payment Details</h3>
 			<span>* required field</span>
 			<form method="post" action="payment">
+			<br><br>
 				<div class="payMethod">
-					<span>card type *</span> <input type="radio" name="method" required>
+					<span>card type *</span> 
+					<input type="radio" name="method" required>
 					<label for="method"><img alt="visa" src="images/visa.png"></label>
 					<input type="radio" name="method" required> <label
-						for="method"><img alt="master" src="master.png"></label>
+						for="method"><img alt="master" src="images/master.png"></label>
 				</div>
+				<br><br>
 				<div class="cardNum">
-					<label for="card-number">card number</label> <input type="text"
+					<label for="card-number">card number*</label> <br><input type="text"
 						name="card-number" pattern=[0-9]{16}
 						title="This number is printed on the front side of your credit card"
 						required>
 				</div>
+				<br><br>
 				<div class="exp">
-					<span> <label for="exp-month">Expiration Month *</label> <select
+					<span> <label for="exp-month">Exp Month *</label> <select
 						name="exp-month" id="exp-month" required>
 							<option value="" selected disabled hidden>Month</option>
 							<option value="January">01</option>
@@ -59,7 +60,7 @@ double total = Double.parseDouble(request.getParameter("total"));
 							<option value="November">11</option>
 							<option value="December">12</option>
 					</select>
-					</span> <span> <label for="exp-year">Expiration Year *</label> <select
+					</span> <span> <label for="exp-year">Exp Year *</label> <select
 						name="exp-year" id="exp-year" required>
 							<option value="" selected disabled hidden>Year</option>
 							<option value="2021">2021</option>
@@ -71,8 +72,9 @@ double total = Double.parseDouble(request.getParameter("total"));
 					</select>
 					</span>
 				</div>
+				<br><br>
 				<div class="cvn">
-					<label for="cvn">CVN *</label> <input type="text"
+					<label for="cvn">CVN *</label><br> <input type="text"
 						pattern="[0-9]{3,4}"
 						title="This code is a three or four digit number printed on the back or front side of your credit card"
 						required>
@@ -85,40 +87,14 @@ double total = Double.parseDouble(request.getParameter("total"));
 			<button onclick="window.location.replace('cart.jsp')">Cancel</button>
 		</div>
 		<div class="right body">
-			<h3>Your Order</h3>
+			<h3>Your Order</h3> <br>
 			<div class="grey-box">
 				<span>total amount</span> <span>Rs <%=total%></span>
 			</div>
 		</div>
 	</div>
 
-	<footer>
-		<script>
-
-let menu = document.querySelector('#menu-bar');
-let navbar = document.querySelector('.navbar');
-let header = document.querySelector('.header-2');
-
-menu.addEventListener('click', () =>{
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-});
-
-window.onscroll = () =>{
-    menu.classList.remove('fa-times');
-    navbar.classList.remove('active');
-
-    if(window.scrollY > 150){
-        header.classList.add('active');
-    }else{
-        header.classList.remove('active');
-    }
-
-}
-
-</script>
-		<%@include file="includes/footer.jsp"%>
-	</footer>
+	
 </body>
 </html>
 <%

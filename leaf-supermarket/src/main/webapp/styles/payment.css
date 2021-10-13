@@ -1,0 +1,81 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+	font-family: 'Poppins', sans-serif;
+	margin:0;
+	padding:0;
+}
+
+.container{
+	display: flex;
+}
+
+.container .left h3, span{
+	font-weight: bold;
+}
+
+.container .left .payMethod span{
+	font-weight: bold;
+}
+.container .left .payMethod img{
+	width: 40px;
+	height: auto;
+}
+
+.cardNum input{
+	height: 25px;
+	width: 250px;
+	border-radius: 12px;
+	padding:5px;
+}
+
+.cvn input:focus, 
+.cardNum input:focus{
+	outline:none;
+}
+
+.container .right {
+	transform:translate(400px, 50px);
+	height: 30px;
+}
+
+.container .left{
+	transform:translate(200px, 50px);
+}
+
+.container .body{
+	border: 1px solid green;
+	padding: 100px;
+	border-radius: 15px;
+	box-shadow: 5px -5px 15px green;
+}
+
+#right{
+	transform:translate(900px, -125px);
+}
+#left{
+	transform:translate(50px, -35px);
+	width: 200px;
+}
+
+.block{
+	border-bottom: 1px solid #BDBDBD;
+	height: 115px;
+}
+
+.container #left span{
+	transform:translate(100px, 0);
+}
+
+
+.cvn input{
+	border-radius: 12px;
+	padding: 5px;
+	width: 50px;
+}
+
+.
+
+
+
