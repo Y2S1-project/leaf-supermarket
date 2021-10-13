@@ -60,7 +60,7 @@
             <div class="address">
                <h6>Shipping Address</h6>
 <%
-      //if(session.getAttribute("address") != null){ 
+      if(session.getAttribute("address") != null){ 
 %>
                <div class="stored-address">
                   <input type="radio" name="address" value=<%=session.getAttribute("address")%> onclick="inactive()" required>
@@ -79,9 +79,9 @@
                   </div>
                </div>
 <%
-      //}else{
+      }else{
 %>
-               <!-- <div class="new-address">               
+               <div class="new-address">               
                   <label>Enter address</label>
                   <div class="newAdd">
                      <label for="house-no">House No *</label><br>
@@ -91,9 +91,9 @@
                      <label for="city">City *</label><br>
                      <input type="text" name="city" placeholder="City" required>                 
                   </div>
-               </div> -->
+               </div>
 <%
-     // }
+      }
 %>
             </div>
          </div>
