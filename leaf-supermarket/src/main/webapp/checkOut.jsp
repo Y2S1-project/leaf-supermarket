@@ -119,8 +119,8 @@
             <div class="summary">                                
                   <span>Subtotal: Rs <%=total %></span>                                           
             </div>
-            <button onclick="window.location.replace('index.jsp')">Continue Shopping</button>
             <input type="submit" value="Proceed to Payment">
+            <button onclick="window.location.replace('index.jsp')">Continue Shopping</button><br>
          </div>
       </div>
    </form>
@@ -129,8 +129,6 @@
    response.sendRedirect("index.jsp");
 }
 %>
-
-<%@include file="includes/footer.jsp" %>
 <script >
 		let div = document.querySelector(".newAdd")
 		let houseNo = document.querySelector("#house-no")

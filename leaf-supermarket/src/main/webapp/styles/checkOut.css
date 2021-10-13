@@ -2,7 +2,7 @@
 
 .container{
   display:flex;
-  padding-top:2rem;
+  padding:2rem;
 }
 
 .inactive{
@@ -11,4 +11,40 @@
 
 .active{
   display: block;
+}
+
+#shippingDetails,
+#payment,
+#order-review{
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 5px -5px 15px grey;
+}
+
+#shippingDetails{
+  transform:translate(-25px, 0);
+  width:600px;
+}
+#order-review{
+  padding: 10px;
+  transform: translate(25px, 0);
+  height:150px;
+}
+#order-review input{
+  translate:transform(0, 5px);
+}
+
+#payment{
+  height:310px;
+  width:500px;
+}
+input, button{
+  border-radius:15px;
+  padding-left:4px;
+}
+input:focus{
+  outline:none
+}
+button{
+  transform: translate(0,10px);
 }
