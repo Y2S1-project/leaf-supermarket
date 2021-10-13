@@ -26,12 +26,12 @@
       <div class="box">
          <h3>categories</h3>
          <div class="links">
-             <a href="babyProduct.jsp">Baby Products</a>
+             <a href="baby-products.jsp">Baby Products</a>
              <a href="bakery.jsp">Bakery</a>
-             <a href="baverages.jsp">Beverages</a>
+             <a href="beverages.jsp">Beverages</a>
              <a href="dairy.jsp">Dairy Products</a>
              <a href="food-cupboard.jsp">Food Cupboard</a>
-             <a href="frozen-food.jsp">Frozen Food</a> 
+             <a href="fozen-food.jsp">Frozen Food</a> 
          </div>
       </div>
       <div class="box">

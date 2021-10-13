@@ -27,6 +27,8 @@
 <html>
 <head>
 <title>Leaf | Cart</title>
+		<%@include file="includes/head.jsp" %>
+		<link rel="stylesheet" href="styles/index.css">
 <%@include file="includes/bootstrap-head.jsp" %>
 
 <style type="text/css">
@@ -41,7 +43,9 @@
 </style>
 </head>
 <body>
-	
+	<header>
+		<%@include file="includes/navbar.jsp" %>
+	</header>
 	<div class="container">
 		<div class="d-flex py-3">
 			<h3>Total Price: Rs. <%=total %> </h3>
@@ -54,6 +58,7 @@
 					<th scope="col">Category</th>
 					<th scope="col">Price</th>
 					<th scope="col">Quantity</th>
+					<th scope="col"></th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
@@ -70,14 +75,14 @@
                              		<input type="hidden" name="product-id" value="<%= p.getId()%>">
                              		<input type="hidden" name="unit-price" value="<%= p.getUnitPrice()%>">
                              		<input type="number" name="increment" value="<%= p.getInc() %>" min=<%=p.getIncrementUnit() %> max=100 step="<%=p.getIncrementUnit() %>">
-                             		<button type="submit" class="btn btn-success">Submit</button>                             		
-                           		</form>
-                           		<form method="post" action="remove-product">
+                             		<button type="submit" class="btn btn-success">Update Quantity</button>                           		
+                          	</form></td>  
+                           		 	<td><form method="post" action="remove-product">
                            			<input type="hidden" name="product-id" value="<%= p.getId()%>">
                            			<input type="hidden" name="userId" value="<%= (int)session.getAttribute("auth")%>">
                            			<button type="submit" class="btn btn-danger">Remove</button>
-                           		</form>
-                           		</td>
+                           		</form></td>
+                           		
                          </tr>
                         <%}
                     }%>
@@ -87,7 +92,35 @@
 		</table>
 	</div>
 
-	<%@include file="includes/bootstrap-body.jsp"%>
+
+	
+	<footer>
+<script>
+
+let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+let header = document.querySelector('.header-2');
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+
+    if(window.scrollY > 150){
+        header.classList.add('active');
+    }else{
+        header.classList.remove('active');
+    }
+
+}
+
+</script>
+<%@include file="includes/footer.jsp" %>
+</footer>
 </body>
 </html>
 <%}else{

@@ -21,7 +21,9 @@ List<Product> products = pd.getCategoryProducts(10);
 		
 	</head>
 <body>
-
+	<header>
+		<%@include file="includes/navbar.jsp" %>
+	</header>
 	<div class="container">
 		<div class="card-header my-3"><center>Personal Care Products</center></div>
 		<div class="category-head"><img src="images/selfCare-banner.jpeg" alt="fruit banner"></div>
@@ -50,6 +52,34 @@ List<Product> products = pd.getCategoryProducts(10);
 		}%>
 		</div>
 	</div>
-	<%@include file="includes/bootstrap-body.jsp"%>
+
+	
+	<footer>
+<script>
+
+let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+let header = document.querySelector('.header-2');
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+
+    if(window.scrollY > 150){
+        header.classList.add('active');
+    }else{
+        header.classList.remove('active');
+    }
+
+}
+
+</script>
+<%@include file="includes/footer.jsp" %>
+</footer>
 </body>
 </html>

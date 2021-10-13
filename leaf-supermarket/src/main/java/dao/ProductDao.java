@@ -155,10 +155,10 @@ public class ProductDao {
 				query="select * from product where category = 'Personal Care'";
 			}
 			if(id == 11) {
-				query="select * from product where category = 'Housholed'";
+				query="select * from product where category = 'Household'";
 			}
 			if(id == 12) {
-				query="select * from product where category = 'Personal Safty'";
+				query="select * from product where category = 'Personal Safety'";
 			}
 			PreparedStatement pt = this.con.prepareStatement(query);
 			ResultSet rs=pt.executeQuery();

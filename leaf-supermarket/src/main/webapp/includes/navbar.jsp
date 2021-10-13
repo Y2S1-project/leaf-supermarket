@@ -63,7 +63,7 @@ if(session.getAttribute("auth") != null){
 		<a href="vegetable.jsp">Vegetables</a>
 		<a href="fruit.jsp">Fruits</a>
 		<a href="dairy.jsp">Dairy</a>
-		<a href="bakery.jps">Bakery</a>
+		<a href="bakery.jsp">Bakery</a>
       <%
          if(session.getAttribute("auth1") == null){ 
       %>
