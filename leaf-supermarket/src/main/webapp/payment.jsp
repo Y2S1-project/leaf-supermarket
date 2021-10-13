@@ -21,7 +21,7 @@
             <div class="payMethod">
                <span>card type *</span> 
                <input type="radio" name="method" required>
-               <label for="method"><img alt="visa" src="visa.png"></label>
+               <label for="method"><img alt="visa" src="images/visa.png"></label>
                <input type="radio" name="method" required> 
                <label for="method"><img alt="master" src="master.png"></label>
             </div>
