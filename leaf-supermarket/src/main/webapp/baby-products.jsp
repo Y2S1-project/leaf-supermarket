@@ -7,7 +7,7 @@
 <% 
 int id = (int)session.getAttribute("auth");
 ProductDao pd = new ProductDao(DbCon.getConnection());
-List<Product> products = pd.getCategoryProducts(2);
+List<Product> products = pd.getCategoryProducts(8);
 %>
 
 <!DOCTYPE html>
@@ -21,8 +21,8 @@ List<Product> products = pd.getCategoryProducts(2);
 <body>
 
 	<div class="container">
-		<div class="card-header my-3"><center>Fruits</center></div>
-		<div class="category-head"><img src="images/fruit-banner.jpeg" alt="fruit banner"></div>
+		<div class="card-header my-3"><center>Baby Products</center></div>
+		<div class="category-head"><img src="images/baby-banner.jpeg" alt="fruit banner"></div>
 		<div class="row">
 		<%
 			if(!products.isEmpty()) {
