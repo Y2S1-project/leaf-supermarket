@@ -57,7 +57,7 @@
     </div>
 </section>
 
-<h1 class="credit"> copyright &copy 2021 <span> MLB_june_29</span>. all rights reserved</h1>
+<h1 class="credit"> copyright &copy; 2021 <span> MLB_june_29</span>. all rights reserved</h1>
 
 
 

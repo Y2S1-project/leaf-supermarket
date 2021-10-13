@@ -1,10 +1,8 @@
 package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import model.Payment;
-import model.User;
 
 public class PaymentDao {
 	private Connection con;
