@@ -15,6 +15,8 @@ List<Product> products = pd.getCategoryProducts(3);
 	<head>
 		<%@include file="includes/bootstrap-head.jsp" %>
 		<title>Insert title here</title>
+			<%@include file="includes/head.jsp" %>
+		<link rel="stylesheet" href="styles/index.css">
 		<link rel="stylesheet" href="styles/categoryDisplay.css">
 		
 	</head>
