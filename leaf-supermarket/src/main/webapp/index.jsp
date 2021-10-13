@@ -45,7 +45,7 @@
 <section class="banner-container">
 
     <div class="banner">
-        <img src="images/banner-1.jpg" alt="">
+        <img src="images/food-cupboard-home-banner.jpeg" alt="">
         <div class="content">
             <p>A range of </p>
             <h3>Fresh Vegetables</h3>
@@ -55,10 +55,74 @@
     </div>
 
     <div class="banner" id="banner2">
-        <img  src="images/banner-2.jpg" alt="">
+        <img  src="images/hand-sanitizer-home.jpeg" alt="">
         <div class="content">
-            <p>Value has never looked so good</p>
-            <h3>A range of Dairy Products</h3>
+            <p>To keep you safe</p>
+            <h3>A range of Personal Safety products</h3>
+            <p>To choose from</p>
+            <a href="dairy.jsp" class="btn">Explore range</a>
+        </div>
+    </div>
+    <br><br> <br>
+    <div class="banner">
+        <img src="images/beverages-home-banner.jpeg" alt="">
+        <div class="content">
+            <p>A range of </p>
+            <h3>Delicious Beverages</h3>
+            <p>To quench your thirst</p>
+            <a href="vegetable.jsp" class="btn">Explore fresh range</a>
+        </div>
+    </div>
+
+    <div class="banner" id="banner2">
+        <img  src="images/household-home-banner.jpeg" alt="">
+        <div class="content">
+            <p>To keep your life beautiful</p>
+            <h3>A range of Personal Care products</h3>
+            <p>To choose from</p>
+            <a href="dairy.jsp" class="btn">Explore range</a>
+        </div>
+    </div>
+    
+    
+    <div class="banner" id="banner2">
+        <img  src="images/frozen-food-home-banner.jpeg" alt="">
+        <div class="content">
+            <p>To keep your life beautiful</p>
+            <h3>A range of Personal Care products</h3>
+            <p>To choose from</p>
+            <a href="dairy.jsp" class="btn">Explore range</a>
+        </div>
+    </div>
+    
+    
+    <div class="banner" id="banner2">
+        <img  src="images/pharmacy-home-banner.jpeg" alt="">
+        <div class="content">
+            <p>To keep your life beautiful</p>
+            <h3>A range of Personal Care products</h3>
+            <p>To choose from</p>
+            <a href="dairy.jsp" class="btn">Explore range</a>
+        </div>
+    </div>
+    
+    
+    <div class="banner" id="banner2">
+        <img  src="images/baby-home-banner.jpeg" alt="">
+        <div class="content">
+            <p>To keep your life beautiful</p>
+            <h3>A range of Personal Care products</h3>
+            <p>To choose from</p>
+            <a href="dairy.jsp" class="btn">Explore range</a>
+        </div>
+    </div>
+    
+    
+    <div class="banner" id="banner2">
+        <img  src="images/personal-care-home-banner.jpeg" alt="">
+        <div class="content">
+            <p>To keep your life beautiful</p>
+            <h3>A range of Personal Care products</h3>
             <p>To choose from</p>
             <a href="dairy.jsp" class="btn">Explore range</a>
         </div>
@@ -66,31 +130,8 @@
 
 </section>
 
-<!-- product section starts  -->
 
-<section class="category" id="product">
 
-    <h1 class="heading">latest <span>products</span></h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <img src="images/product-1.png" alt="">
-            <h3>organic banana</h3>
-            <div class="price"> Rs 10.50 <span> $13.20 </span> </div>
-            <div class="quantity">
-                <span>quantity : </span>
-                <input type="number" min="1" max="1000" value="1">
-                <span> /kg </span>
-            </div>
-            <a href="#" class="btn">add to cart</a>
-        </div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-
-    </div>
-</section>
  </main>
 <footer>
 <script>

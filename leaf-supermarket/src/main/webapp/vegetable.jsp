@@ -52,7 +52,7 @@ List<Product> products = pd.getCategoryProducts(1);
 		}%>
 		</div>
 	</div>
-	<%@include file="includes/bootstrap-body.jsp"%>
+
 	<footer>
 <script>
 
