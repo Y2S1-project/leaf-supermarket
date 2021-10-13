@@ -116,13 +116,8 @@
          </div>
          <div id="order-review">
             <h6>Order Review</h6>            
-            <div class="summary">
-               <ul>
-                  <li>Item Count: </li>
-                  <li>Subtotal: Rs <%=total %></li>
-                  <li id="delivery" class="inactive">Delivery Charges: Rs 150.00</li>
-                  <li id="total">Total: 200.00</li>          
-               </ul>
+            <div class="summary">                                
+                  <span>Subtotal: Rs <%=total %></span>                                           
             </div>
             <button onclick="window.location.replace('index.jsp')">Continue Shopping</button>
             <input type="submit" value="Proceed to Payment">

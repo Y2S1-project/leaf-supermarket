@@ -63,7 +63,7 @@
             </div>
             <div class="cvn">               
                <label for="cvn">CVN *</label>
-               <input type="text" pattern="[0-9]{4}" title="This code is a three or four digit number printed on the back or front side of your credit card" required>
+               <input type="text" pattern="[0-9]{3,4}" title="This code is a three or four digit number printed on the back or front side of your credit card" required>
             </div>
             <input type="hidden" name="total" value="<%=total%>">
             <input type="hidden" name="user_id" value=<%=(int) session.getAttribute("auth") %>>
