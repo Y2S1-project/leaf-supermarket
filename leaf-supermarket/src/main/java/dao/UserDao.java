@@ -74,5 +74,22 @@ public class UserDao {
 		}
 		return user;
 	}
+	
+	public boolean updateUser(User user) {
+		boolean set = false;
+		try {
+			String query = "update reg_user set telephone=?, address=? where user_id=?";
+			pst = this.con.prepareStatement(query);
+			pst.setString(1, user.getTelephone());
+			pst.setString(2, user.getAddress());
+			pst.setInt(3, user.getId());
+			System.out.println(user.getId() + user.getAddress() + "  " + user.getTelephone());
+			pst.executeUpdate();
+			set = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return set;
+	}
 }
 		
